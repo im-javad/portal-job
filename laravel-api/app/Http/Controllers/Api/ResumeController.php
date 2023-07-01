@@ -66,7 +66,7 @@ class ResumeController extends Controller
      */
     public function destroy(Ad $ad , string $resumeId)
     {
-        $selectedResume = $ad->resumes->where('id' , $resumeId)->first()->delete();
+        $selectedResume = $ad->resumes->where('id' , $resumeId)->first();
 
         $this->doDestroy($selectedResume);
         
