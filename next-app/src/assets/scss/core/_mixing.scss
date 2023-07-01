@@ -1,0 +1,20 @@
+@mixin transition($type: all, $time: 0.5s, $effect: ease) {
+  transition: $type $time $effect;
+}
+@mixin after-line(
+  $bottom: 0,
+  $left: 0,
+  $right: 0,
+  $height: 2px,
+  $background-color: $appColor_3
+) {
+  content: "";
+  position: absolute;
+  bottom: $bottom;
+  left: $left;
+  right: $right;
+  height: $height;
+  background-color: $background-color;
+  width: 100%;
+  @include transition();
+}

@@ -1,0 +1,20 @@
+footer#footer {
+  div {
+    span {
+      color: $appColor_3;
+      opacity: 1;
+    }
+    .link {
+      color: $appColor_2;
+    }
+  }
+}
+
+footer#subFooter {
+  .social {
+    @include transition();
+    &:hover {
+      color: $appColor_3;
+    }
+  }
+}

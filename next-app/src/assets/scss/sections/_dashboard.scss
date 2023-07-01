@@ -1,0 +1,96 @@
+section#add-a-new-ad {
+  button {
+    font-weight: 800;
+    @include transition();
+    &:hover {
+      letter-spacing: 3px;
+      background-color: $appColor_3;
+    }
+  }
+  .modal {
+    .btn-close {
+      button {
+        top: 0;
+        right: 2px;
+        font-size: 20px;
+        background-color: #1d232a;
+        border: none;
+        color: red;
+      }
+    }
+  }
+}
+section#dashboard {
+  .status {
+    .header {
+      div {
+        position: relative;
+        &::after {
+          @include after-line();
+        }
+      }
+      .active {
+        border-top: 2px solid $appColor_3;
+        border-left: 2px solid $appColor_3;
+        border-right: 2px solid $appColor_3;
+        border-radius: 10px 10px 0 0;
+        padding-top: 2px;
+        color: $appColor_2;
+        font-weight: 700;
+        &::after {
+          display: none;
+        }
+      }
+    }
+    .content {
+      div.my-requests,
+      div.ones-shown,
+      div.my-ads {
+        .job {
+          cursor: pointer;
+          @include transition();
+          .job-info {
+            .status-waiting {
+              i {
+                color: rgb(9, 101, 161);
+              }
+            }
+            .status-accept {
+              i {
+                color: rgb(0, 170, 51);
+              }
+            }
+            .status-rejected {
+              i {
+                color: rgb(218, 41, 10);
+              }
+            }
+          }
+          .application-details,
+          .job-apply,
+          .deletion-indicated,
+          .view-resumes,
+          .remove-ad {
+            button {
+              justify-content: center;
+              width: 100%;
+              font-weight: 550;
+              padding: 6px;
+              font-size: 17px;
+              border-radius: 10px;
+              background-color: $appColor_2;
+              color: $appColor_4;
+              transition: 0.5s ease-in;
+            }
+          }
+          .deletion-indicated,
+          .remove-ad {
+            button {
+              background-color: $appColor_3;
+            }
+          }
+        }
+      }
+    }
+  }
+}

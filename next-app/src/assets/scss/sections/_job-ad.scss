@@ -1,0 +1,50 @@
+section#ad-info {
+  .modal {
+    button {
+      font-weight: 800;
+      @include transition();
+      &:hover {
+        letter-spacing: 3px;
+        background-color: $appColor_3;
+      }
+    }
+    .btn-close {
+      button {
+        top: 0;
+        right: 2px;
+        font-size: 20px;
+        background-color: #1d232a;
+        border: none;
+        color: red;
+      }
+    }
+  }
+}
+
+section#ad-content {
+  .title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 14px;
+    i {
+      font-size: 25px;
+      color: $appColor_2;
+    }
+    span {
+      font-size: 20px;
+      margin-left: 12px;
+      color: $appColor_2;
+    }
+  }
+  .content-ul-structure {
+    ul {
+      li {
+        margin-bottom: 8px;
+        display: flex;
+        span {
+          margin-left: 2px;
+        }
+      }
+    }
+  }
+}

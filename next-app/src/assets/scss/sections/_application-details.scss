@@ -1,0 +1,70 @@
+section#application-details {
+  .container {
+    .request-status {
+      .content {
+        .custom-steps-part {
+          .custom-steps {
+            .custom-step {
+              width: 30px;
+              height: 30px;
+              border-radius: 100%;
+              background-color: $appColor_3;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              color: $appColor_4;
+              font-weight: 750;
+              margin-bottom: 10rem;
+            }
+            .connect {
+              position: relative;
+              &::after {
+                content: "";
+                position: absolute;
+                bottom: 4px;
+                left: 11px;
+                z-index: -1;
+                right: 0;
+                height: 215px;
+                background-color: $appColor_3;
+                width: 23%;
+              }
+            }
+          }
+        }
+      }
+    }
+    .sent {
+      .ad-details {
+        .job {
+          cursor: pointer;
+          @include transition();
+          .job-content {
+            .view-ad {
+              button {
+                justify-content: center;
+                width: 100%;
+                font-weight: 700;
+                padding: 6px;
+                font-size: 17px;
+                border-radius: 10px;
+                background-color: $appColor_2;
+                color: $appColor_4;
+                @include transition();
+              }
+            }
+          }
+          &:hover {
+            .job-content {
+              .view-ad {
+                button {
+                  background-color: $appColor_3;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

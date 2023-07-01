@@ -1,0 +1,36 @@
+section#advertisement-details {
+  .container {
+    .resumes-received {
+      .content {
+        .resume {
+          .resume-content {
+            .resume-operations {
+              .resume-accept,
+              .resume-reject {
+                button {
+                  justify-content: center;
+                  width: 100%;
+                  font-weight: 700;
+                  padding: 6px;
+                  font-size: 17px;
+                  border-radius: 10px;
+                  color: $appColor_4;
+                }
+              }
+              .resume-accept {
+                button {
+                  background-color: rgb(0, 170, 51);
+                }
+              }
+              .resume-reject {
+                button {
+                  background-color: rgb(218, 41, 10);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

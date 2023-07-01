@@ -1,0 +1,95 @@
+section#searching {
+  .container {
+    .search-box {
+      input {
+        &:focus {
+          outline-style: none;
+          outline-width: none;
+          outline-offset: none;
+          outline-color: none;
+        }
+      }
+    }
+    .search-place {
+      select {
+        &:focus {
+          outline-style: none;
+          outline-width: none;
+          outline-offset: none;
+          outline-color: none;
+        }
+      }
+    }
+    .search-time {
+      select {
+        &:focus {
+          outline-style: none;
+          outline-width: none;
+          outline-offset: none;
+          outline-color: none;
+        }
+      }
+    }
+    .search-btn {
+      button {
+        @include transition();
+        span {
+          font-weight: 650;
+        }
+        &:hover{
+          color: $appColor_4;
+          letter-spacing: 3px;
+        }
+      }
+    }
+  }
+}
+
+section#jobs {
+  .container {
+    div.job {
+      cursor: pointer;
+      @include transition();
+      .job-published {
+        min-width: 22%;
+        transform: rotate(320deg);
+        top: 30px;
+        left: 0;
+        padding: 13px;
+        color: $appColor_2;
+        @include transition();
+      }
+      .job-content {
+        .job-apply {
+          button {
+            justify-content: center;
+            width: 100%;
+            font-weight: 700;
+            padding: 6px;
+            font-size: 17px;
+            border-radius: 10px;
+            background-color: $appColor_2;
+            color: $appColor_4;
+            @include transition();
+          }
+        }
+      }
+      &:hover {
+        .job-apply {
+          button {
+            background-color: $appColor_3;
+          }
+        }
+        .job-published {
+          color: $appColor_3;
+        }
+      }
+    }
+    .pagination {
+      button {
+        background-color: $appColor_3;
+        color: $appColor_4;
+      }
+    }
+  }
+}
