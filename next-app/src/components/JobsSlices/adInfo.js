@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { MdApartment, MdLocationOn, MdAccessTimeFilled } from "react-icons/md";
 import Swal from "sweetalert2";
-// import InputError from "../InputError";
+import InputError from "../InputError";
 
 const AdInfo = ({ attributes, adId }) => {
   const [name, setName] = useState("");
@@ -116,7 +116,7 @@ const AdInfo = ({ attributes, adId }) => {
                       placeholder="Type here"
                       className="input input-bordered bg-appColor_4 w-full mt-2"
                     />
-                    {/* <InputError messages={errors.name} className="mt-2" /> */}
+                    <InputError messages={errors.name} className="mt-2" />
                   </div>
                   <div className="col-span-12 lg:col-span-6 mb-7">
                     <label htmlFor="email" className="text-appColor_2">
@@ -128,7 +128,7 @@ const AdInfo = ({ attributes, adId }) => {
                       placeholder="Type here"
                       className="input input-bordered bg-appColor_4 w-full mt-2"
                     />
-                    {/* <InputError messages={errors.email} className="mt-2" /> */}
+                    <InputError messages={errors.email} className="mt-2" />
                   </div>
                   <div className="col-span-12 lg:col-span-6 mb-7">
                     <label htmlFor="phone" className="text-appColor_2">
@@ -141,7 +141,7 @@ const AdInfo = ({ attributes, adId }) => {
                       placeholder="Type here"
                       className="input input-bordered bg-appColor_4 w-full mt-2"
                     />
-                    {/* <InputError messages={errors.phone} className="mt-2" /> */}
+                    <InputError messages={errors.phone} className="mt-2" />
                   </div>
                   <div className="col-span-12 lg:col-span-6 mb-7">
                     <label htmlFor="resume_url" className="text-appColor_2">
@@ -154,7 +154,7 @@ const AdInfo = ({ attributes, adId }) => {
                       placeholder="Type here"
                       className="file-input file-input-bordered bg-appColor_4 w-full mt-2"
                     />
-                    {/* <InputError messages={errors.resume_url} className="mt-2" /> */}
+                    <InputError messages={errors.resume_url} className="mt-2" />
                   </div>
                   <div className="modal-action btn-close">
                     <button className="btn absolute">✗</button>
