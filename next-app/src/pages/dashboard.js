@@ -12,6 +12,7 @@ import MyAds from "@/components/DashboardSlices/myAds";
 import MyRequests from "@/components/DashboardSlices/myRequest";
 import MySaved from "@/components/DashboardSlices/mySaved";
 import axios from "@/lib/axios";
+import Head from "next/head";
 
 const breadcrumbs = {
   0: { title: "Home", link: `/` },
@@ -22,58 +23,64 @@ const Dashboard = ({ adsReceived, requestsReceived, savedReceived }) => {
   const [choosen, setChoosen] = useState(1);
 
   return (
-    <div className="container mx-auto px-4">
-      <Breadcrumbs crumbs={breadcrumbs} />
+    <>
+      <Head>
+        <title>Dashboard</title>
+      </Head>
 
-      <AddANewAd />
+      <div className="container mx-auto px-4">
+        <Breadcrumbs crumbs={breadcrumbs} />
 
-      <section id="dashboard" className="mb-24">
-        <div className="status">
-          <div className="header cursor-pointer flex mb-7">
-            <div
-              className={`w-1/3 flex justify-center ${
-                choosen === 2 && "active"
-              }`}
-              onClick={() => {
-                setChoosen(2);
-              }}
-            >
-              <span className="">Requests</span>
+        <AddANewAd />
+
+        <section id="dashboard" className="mb-24">
+          <div className="status">
+            <div className="header cursor-pointer flex mb-7">
+              <div
+                className={`w-1/3 flex justify-center ${
+                  choosen === 2 && "active"
+                }`}
+                onClick={() => {
+                  setChoosen(2);
+                }}
+              >
+                <span className="">Requests</span>
+              </div>
+              <div
+                className={`w-1/3 flex justify-center ${
+                  choosen === 1 && "active"
+                }`}
+                onClick={() => {
+                  setChoosen(1);
+                }}
+              >
+                <span>Ads</span>
+              </div>
+              <div
+                className={`w-1/3 flex justify-center ${
+                  choosen === 3 && "active"
+                }`}
+                onClick={() => {
+                  setChoosen(3);
+                }}
+              >
+                <span>Saved</span>
+              </div>
             </div>
-            <div
-              className={`w-1/3 flex justify-center ${
-                choosen === 1 && "active"
-              }`}
-              onClick={() => {
-                setChoosen(1);
-              }}
-            >
-              <span>Ads</span>
-            </div>
-            <div
-              className={`w-1/3 flex justify-center ${
-                choosen === 3 && "active"
-              }`}
-              onClick={() => {
-                setChoosen(3);
-              }}
-            >
-              <span>Saved</span>
+            <div className="content">
+              {choosen === 1 && <MyAds ads={adsReceived} />}
+              {choosen === 2 && <MyRequests requests={requestsReceived} />}
+              {choosen === 3 && <MySaved saved={savedReceived} />}
+              {![1, 2, 3].includes(choosen) && (
+                <span className="text-[#da290a] font-bold">
+                  little hacker, don't manipulate the site {"(:"}
+                </span>
+              )}
             </div>
           </div>
-          <div className="content">
-            {choosen === 1 && <MyAds ads={adsReceived} />}
-            {choosen === 2 && <MyRequests requests={requestsReceived} />}
-            {choosen === 3 && <MySaved saved={savedReceived} />}
-            {![1, 2, 3].includes(choosen) && (
-              <span className="text-[#da290a] font-bold">
-                little hacker, don't manipulate the site {"(:"}
-              </span>
-            )}
-          </div>
-        </div>
-      </section>
-    </div>
+        </section>
+      </div>
+    </>
   );
 };
 

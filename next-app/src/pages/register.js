@@ -1,6 +1,7 @@
 import MainLayout from "@/layouts/MainLayout";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RegisterForm from "@/components/Forms/register";
+import Head from "next/head";
 
 const breadcrumbs = {
   0: { title: "Home", link: `/` },
@@ -9,11 +10,17 @@ const breadcrumbs = {
 
 const Register = () => {
   return (
-    <div className="container mx-auto px-4 mb-20">
-      <Breadcrumbs crumbs={breadcrumbs} />
+    <>
+    <Head>
+      <title>Register</title>
+    </Head>
+    
+      <div className="container mx-auto px-4 mb-20">
+        <Breadcrumbs crumbs={breadcrumbs} />
 
-      <RegisterForm />
-    </div>
+        <RegisterForm />
+      </div>
+    </>
   );
 };
 
