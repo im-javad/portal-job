@@ -1,44 +1,36 @@
-import { useRouter } from "next/router";
 import axios from "@/lib/axios";
 
-export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
-  const router = useRouter();
+export const fetchingUser = async (req) => {
+  const user = await axios
+    .get("/api/user", {
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + req.cookies.jwt || "",
+      },
+    })
+    .then((response) => response.data);
 
-  const user = async () => {
-    const user = await axios
-      .get("/api/user", {
-        withCredentials: true,
-      })
-      .then((response) => response.data);
-    //   Cath ....
+  return user;
+};
 
-    return user;
-  };
+export const register = async ({ ...props }) => {
+  axios
+    .post("/api/register", props, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+    .then(() => router.push("/login"));
+};
 
-  const register = async ({ ...props }) => {
-    axios
-      .post("/api/register", props, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
-      .then(() => router.push("/login"));
-  };
-
-  const login = async ({ ...props }) => {
-    axios
-      .post("/api/login", props, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-        withCredentials: true,
-      })
-      .then(() => router.push("/me"));
-  };
-
-  return {
-    user,
-    register,
-    login,
-  };
+export const login = async ({ ...props }) => {
+  axios
+    .post("/api/login", props, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      withCredentials: true,
+    })
+    .then(() => router.push("/me"));
 };

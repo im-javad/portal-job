@@ -11,6 +11,7 @@ import {
 import MyAds from "@/components/DashboardSlices/myAds";
 import MyRequests from "@/components/DashboardSlices/myRequest";
 import MySaved from "@/components/DashboardSlices/mySaved";
+import axios from "@/lib/axios";
 
 const breadcrumbs = {
   0: { title: "Home", link: `/` },
@@ -78,10 +79,10 @@ const Dashboard = ({ adsReceived, requestsReceived, savedReceived }) => {
 
 export default Dashboard;
 
-export const getServerSideProps = async () => {
-  const ads = await fetchingAds(); //! in try catch (:
-  const requests = await fetchingRequests();
-  const saved = await fetchingSaved();
+export const getServerSideProps = async ({ req }) => {
+  const ads = await fetchingAds(req); //! in try catch (:
+  const requests = await fetchingRequests(req);
+  const saved = await fetchingSaved(req);
 
   return {
     props: {

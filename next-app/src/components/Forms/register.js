@@ -6,6 +6,7 @@ import { useState } from "react";
 const RegisterForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [role, setRole] = useState("");
   const [password, setPassword] = useState("");
 
   const { register } = useAuth();
@@ -16,6 +17,7 @@ const RegisterForm = () => {
     register({
       name,
       email,
+      role,
       password,
     });
   };
@@ -59,22 +61,6 @@ const RegisterForm = () => {
             {/* <InputError messages={errors.email} className="mt-2" /> */}
           </div>
           <div className="col-span-12 mb-7">
-            <label htmlFor="password" className="text-appColor_2">
-              Password
-            </label>
-            <input
-              id="password"
-              type="password"
-              value={password}
-              onChange={(event) => setPassword(event.target.value)}
-              required
-              autoComplete="new-password"
-              placeholder="Type here"
-              className="input input-bordered bg-appColor_4 w-full mt-2"
-            />
-            {/* <InputError messages={errors.password} className="mt-2" /> */}
-          </div>
-          {/* <div className="col-span-12 mb-7">
             <label htmlFor="role" className="text-appColor_2">
               Role
             </label>
@@ -92,8 +78,24 @@ const RegisterForm = () => {
               <option value="Employer">Employer</option>
               <option value="Job Seeker">Job Seeker</option>
             </select>
-            <InputError messages={errors.role} className="mt-2" />
-          </div> */}
+            {/* <InputError messages={errors.role} className="mt-2" /> */}
+          </div>
+          <div className="col-span-12 mb-7">
+            <label htmlFor="password" className="text-appColor_2">
+              Password
+            </label>
+            <input
+              id="password"
+              type="password"
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}
+              required
+              autoComplete="new-password"
+              placeholder="Type here"
+              className="input input-bordered bg-appColor_4 w-full mt-2"
+            />
+            {/* <InputError messages={errors.password} className="mt-2" /> */}
+          </div>
           <div className="col-span-12 mb-7">
             <button className="btn w-full normal-case text-lg bg-appColor_2 hover:bg-appColor_2 outline-none text-appColor_4">
               Register Now

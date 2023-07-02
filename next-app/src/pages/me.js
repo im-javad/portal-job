@@ -1,18 +1,19 @@
-import { useEffect } from "react";
-import axios from "@/lib/axios";
-import { useAuth } from "@/hooks/auth";
+import { fetchingUser } from "@/hooks/auth";
 
-const Me = () => {
-  const { user } = useAuth();
-
-  useEffect(() => {
-    (async () => {
-      const me = await user();
-      console.log(me);
-    })();
-  });
+const Me = ({ receivedUser }) => {
+  console.log(receivedUser);
 
   return <div className=" bg-stone-950">Yeah bro we can</div>;
 };
 
 export default Me;
+
+export const getServerSideProps = async ({ req }) => {
+  const user = await fetchingUser(req);
+
+  return {
+    props: {
+      receivedUser: user,
+    },
+  };
+};
