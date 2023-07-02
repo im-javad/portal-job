@@ -20,6 +20,7 @@ class AuthController extends Controller
             'name' => $validator['name'],
             'email' => $validator['email'],
             'password' => Hash::make($validator['password']),
+            'role' => $validator['role'],
         ]);
 
         return $user;
@@ -58,6 +59,6 @@ class AuthController extends Controller
     
     function user() 
     {
-        return Auth::user();
+        return auth()->user();
     }
 }

@@ -16,6 +16,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role',
     ];
 
     protected $hidden = [
@@ -27,4 +28,16 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    function resumes() {
+        return $this->hasMany(Resume::class);
+    }
+
+    function ads() {
+        return $this->hasMany(Ad::class , 'employer_id');
+    }
+
+    function userSaved() {
+        return $this->belongsToMany(Ad::class , 'user_ad');
+    }
 }
