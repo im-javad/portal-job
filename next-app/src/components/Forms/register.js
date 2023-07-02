@@ -1,5 +1,5 @@
+import { register } from "@/hooks/auth";
 import Link from "next/link";
-import { useAuth } from "@/hooks/auth";
 import { useState } from "react";
 // import InputError from "@/components/InputError";
 
@@ -8,8 +8,6 @@ const RegisterForm = () => {
   const [email, setEmail] = useState("");
   const [role, setRole] = useState("");
   const [password, setPassword] = useState("");
-
-  const { register } = useAuth();
 
   const submit = async (e) => {
     e.preventDefault();

@@ -1,5 +1,5 @@
+import { login } from "@/hooks/auth";
 import Link from "next/link";
-import { useAuth } from "@/hooks/auth";
 import { useState } from "react";
 // import InputError from "@/components/InputError";
 
@@ -7,8 +7,6 @@ const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [shouldRemember, setShouldRemember] = useState(false);
-
-  const { login } = useAuth();
 
   const submit = async (e) => {
     e.preventDefault();
