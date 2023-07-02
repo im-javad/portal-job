@@ -1,7 +1,7 @@
 import { postingJob } from "@/hooks/job";
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
-// import InputError from "@/components/InputError";
+import InputError from "@/components/InputError";
 
 const AddANewAd = () => {
   const [title, setTitle] = useState("");
@@ -49,9 +49,9 @@ const AddANewAd = () => {
     data.append("img_url", companyImg);
 
     postingJob({
-      setErrors,
       setPostingStatus,
       setPostedId,
+      setErrors,
       data,
     });
   };
@@ -104,7 +104,7 @@ const AddANewAd = () => {
                   placeholder="Type here"
                   className="input input-bordered bg-appColor_4 w-full mt-2"
                 />
-                {/* <InputError messages={errors.title} className="mt-2" /> */}
+                <InputError messages={errors.title} className="mt-2" />
               </div>
               <div className="col-span-12 lg:col-span-6 mb-7">
                 <label htmlFor="company_name" className="text-appColor_2">
@@ -118,7 +118,7 @@ const AddANewAd = () => {
                   placeholder="Type here"
                   className="input input-bordered bg-appColor_4 w-full mt-2"
                 />
-                {/* <InputError messages={errors.company_name} className="mt-2" /> */}
+                <InputError messages={errors.company_name} className="mt-2" />
               </div>
               <div className="col-span-12 lg:col-span-6 mb-7">
                 <label htmlFor="country" className="text-appColor_2">
@@ -132,7 +132,7 @@ const AddANewAd = () => {
                   placeholder="Type here"
                   className="input input-bordered bg-appColor_4 w-full mt-2"
                 />
-                {/* <InputError messages={errors.country} className="mt-2" /> */}
+                <InputError messages={errors.country} className="mt-2" />
               </div>
               <div className="col-span-12 lg:col-span-6 mb-7">
                 <label htmlFor="city" className="text-appColor_2">
@@ -146,7 +146,7 @@ const AddANewAd = () => {
                   placeholder="Type here"
                   className="input input-bordered bg-appColor_4 w-full mt-2"
                 />
-                {/* <InputError messages={errors.city} className="mt-2" /> */}
+                <InputError messages={errors.city} className="mt-2" />
               </div>
               <div className="col-span-12 mb-7">
                 <label htmlFor="cooperation_type" className="text-appColor_2">
@@ -166,10 +166,10 @@ const AddANewAd = () => {
                   <option value="Project Oriented">Project Oriented</option>
                   <option value="Remote">Remote</option>
                 </select>
-                {/* <InputError
+                <InputError
                   messages={errors.cooperation_type}
                   className="mt-2"
-                /> */}
+                />
               </div>
               <div className="col-span-12 lg:col-span-6 mb-7">
                 <label htmlFor="img_url" className="text-appColor_2">
@@ -183,7 +183,7 @@ const AddANewAd = () => {
                   placeholder="Type here"
                   className="file-input file-input-bordered bg-appColor_4 w-full mt-2"
                 />
-                {/* <InputError messages={errors.img_url} className="mt-2" /> */}
+                <InputError messages={errors.img_url} className="mt-2" />
               </div>
               <div className="col-span-12 lg:col-span-6 mb-7">
                 <label htmlFor="vancy" className="text-appColor_2">
@@ -198,7 +198,7 @@ const AddANewAd = () => {
                   placeholder="Type here"
                   className="input input-bordered bg-appColor_4 w-full mt-2"
                 />
-                {/* <InputError messages={errors.vancy} className="mt-2" /> */}
+                <InputError messages={errors.vancy} className="mt-2" />
               </div>
               <div className="col-span-12 lg:col-span-6 mb-7">
                 <label htmlFor="need_experience" className="text-appColor_2">
@@ -213,10 +213,10 @@ const AddANewAd = () => {
                   placeholder="Type here"
                   className="input input-bordered bg-appColor_4 w-full mt-2"
                 />
-                {/* <InputError
+                <InputError
                   messages={errors.need_experience}
                   className="mt-2"
-                /> */}
+                />
               </div>
               <div className="col-span-12 mb-7">
                 <label htmlFor="gender" className="text-appColor_2">
@@ -231,12 +231,12 @@ const AddANewAd = () => {
                 >
                   <option selected disabled>
                     select gender
-                  </option> 
+                  </option>
                   <option value="Male">Male</option>
                   <option value="Female">Female</option>
                   <option value="Any">Any</option>
                 </select>
-                {/* <InputError messages={errors.gender} className="mt-2" /> */}
+                <InputError messages={errors.gender} className="mt-2" />
               </div>
               <div className="col-span-12 lg:col-span-6 mb-7">
                 <label htmlFor="telegram_link" className="text-appColor_2">
@@ -250,7 +250,7 @@ const AddANewAd = () => {
                   placeholder="Type here"
                   className="input input-bordered bg-appColor_4 w-full mt-2"
                 />
-                {/* <InputError messages={errors.telegram_link} className="mt-2" /> */}
+                <InputError messages={errors.telegram_link} className="mt-2" />
               </div>
               <div className="col-span-12 lg:col-span-6 mb-7">
                 <label htmlFor="instagram_link" className="text-appColor_2">
@@ -264,7 +264,7 @@ const AddANewAd = () => {
                   placeholder="Type here"
                   className="input input-bordered bg-appColor_4 w-full mt-2"
                 />
-                {/* <InputError messages={errors.instagram_link} className="mt-2" /> */}
+                <InputError messages={errors.instagram_link} className="mt-2" />
               </div>
               <div className="col-span-12 lg:col-span-6 mb-7">
                 <label htmlFor="facebook_link" className="text-appColor_2">
@@ -278,7 +278,7 @@ const AddANewAd = () => {
                   placeholder="Type here"
                   className="input input-bordered bg-appColor_4 w-full mt-2"
                 />
-                {/* <InputError messages={errors.facebook_link} className="mt-2" /> */}
+                <InputError messages={errors.facebook_link} className="mt-2" />
               </div>
               <div className="col-span-12 lg:col-span-6 mb-7">
                 <label htmlFor="github_link" className="text-appColor_2">
@@ -292,7 +292,7 @@ const AddANewAd = () => {
                   placeholder="Type here"
                   className="input input-bordered bg-appColor_4 w-full mt-2"
                 />
-                {/* <InputError messages={errors.github_link} className="mt-2" /> */}
+                <InputError messages={errors.github_link} className="mt-2" />
               </div>
               <div className="col-span-12 mb-7">
                 <label htmlFor="description" className="text-appColor_2">
@@ -305,7 +305,7 @@ const AddANewAd = () => {
                   placeholder="Write your notes or questions here..."
                   className="textarea textarea-bordered bg-appColor_4 textarea-md w-full mt-2"
                 ></textarea>
-                {/* <InputError messages={errors.description} className="mt-2" /> */}
+                <InputError messages={errors.description} className="mt-2" />
               </div>
               <div className="col-span-12 mb-7">
                 <label htmlFor="responsibilities" className="text-appColor_2">
@@ -318,10 +318,10 @@ const AddANewAd = () => {
                   placeholder="Write your notes or questions here..."
                   className="textarea textarea-bordered bg-appColor_4 textarea-md w-full mt-2"
                 ></textarea>
-                {/* <InputError
+                <InputError
                   messages={errors.responsibilities}
                   className="mt-2"
-                /> */}
+                />
               </div>
               <div className="col-span-12 mb-7">
                 <label
@@ -337,10 +337,10 @@ const AddANewAd = () => {
                   placeholder="Write your notes or questions here..."
                   className="textarea textarea-bordered bg-appColor_4 textarea-md w-full mt-2"
                 ></textarea>
-                {/* <InputError
+                <InputError
                   messages={errors.required_knowledge_skills}
                   className="mt-2"
-                /> */}
+                />
               </div>
               <div className="col-span-12 mb-7">
                 <label htmlFor="bonus_skills" className="text-appColor_2">
@@ -353,7 +353,7 @@ const AddANewAd = () => {
                   placeholder="Write your notes or questions here..."
                   className="textarea textarea-bordered bg-appColor_4 textarea-md w-full mt-2"
                 ></textarea>
-                {/* <InputError messages={errors.bonus_skills} className="mt-2" /> */}
+                <InputError messages={errors.bonus_skills} className="mt-2" />
               </div>
               <div className="modal-action btn-close">
                 <button className="btn absolute">✗</button>

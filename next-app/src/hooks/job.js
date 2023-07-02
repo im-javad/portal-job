@@ -19,12 +19,23 @@ export const fetchingJob = async (id) => {
   return job;
 };
 
-export const postingJob = async ({ setPostingStatus, setPostedId, data }) => {
+export const postingJob = async ({
+  setPostingStatus,
+  setPostedId,
+  setErrors,
+  data,
+}) => {
   setPostingStatus(null);
   setPostedId(null);
+  setErrors([]);
 
-  axios.post("/api/ads", data).then((response) => {
-    setPostingStatus(response.data.status);
-    setPostedId(response.data.ad.id);
-  });
+  axios
+    .post("/api/ads", data)
+    .then((response) => {
+      setPostingStatus(response.data.status);
+      setPostedId(response.data.ad.id);
+    })
+    .catch((error) => {
+      setErrors(error.response.data.errors);
+    });
 };

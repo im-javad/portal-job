@@ -15,22 +15,18 @@ export const fetchingUser = async (req) => {
 };
 
 export const register = async ({ ...props }) => {
-  axios
-    .post("/api/register", props, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-    .then(() => router.push("/login"));
+  axios.post("/api/register", props, {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
 };
 
 export const login = async ({ ...props }) => {
-  axios
-    .post("/api/login", props, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-      withCredentials: true,
-    })
-    .then(() => router.push("/me"));
+  axios.post("/api/login", props, {
+    headers: {
+      "Content-Type": "application/json",
+    },
+    withCredentials: true,
+  });
 };
