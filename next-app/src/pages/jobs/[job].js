@@ -16,20 +16,20 @@ const Job = ({ jobReceived }) => {
     1: { title: "Jobs", link: `/jobs/${jobReceived.id}` },
   };
 
-  if (router.isFallback) {
-    return <Loader />;
-  }
-
   return (
     <>
-    <Head>
-      <title>Job #{jobReceived.id}</title>
-    </Head>
-      <Breadcrumbs crumbs={breadcrumbs} />
-
-      <AdInfo attributes={attributes} adId={router.query.job} />
-
-      <AdContent attributes={attributes} />
+      <Head>
+        <title>Job #{jobReceived.id}</title>
+      </Head>
+      {jobReceived ? (
+        <>
+          <Breadcrumbs crumbs={breadcrumbs} />
+          <AdInfo attributes={attributes} adId={router.query.job} />
+          <AdContent attributes={attributes} />
+        </>
+      ) : (
+        <Loader />
+      )}
     </>
   );
 };
