@@ -8,6 +8,7 @@ import {
 
 const Request = ({ request }) => {
   const adDetails = request.relationships.ad[0];
+  const details = request.attributes;
 
   return (
     <div className="job shadow-sm shadow-appColor_3 hover:shadow-appColor_2 p-4 md:mx-4 mb-10 rounded">
@@ -29,9 +30,7 @@ const Request = ({ request }) => {
               <i>
                 <MdChangeCircle className="text-lg" />
               </i>
-              <span className="text-sm ms-1">
-                Status: Awaiting determination
-              </span>
+              <span className="text-sm ms-1">Status: {details.status}</span>
             </li>
             <li className="flex items-center mb-1">
               <i>
@@ -47,7 +46,9 @@ const Request = ({ request }) => {
         </div>
         <div className="application-details">
           <button className="mt-6">
-            <Link href={`/jobs/${adDetails.id}`}>Application Details</Link>
+            <Link href={`/jobs/${adDetails.id}/resumes/${request.id}`}>
+              Application status
+            </Link>
           </button>
         </div>
       </div>

@@ -48,6 +48,10 @@ const Job = ({ jobReceived }) => {
 
 export default Job;
 
+Job.getLayout = (page) => {
+  return <MainLayout>{page}</MainLayout>;
+};
+
 export const getServerSideProps = async ({ params }) => {
   try {
     const job = await fetchingJob(params.job);
@@ -59,8 +63,4 @@ export const getServerSideProps = async ({ params }) => {
   } catch (error) {
     return { notFound: 1 };
   }
-};
-
-Job.getLayout = (page) => {
-  return <MainLayout>{page}</MainLayout>;
 };

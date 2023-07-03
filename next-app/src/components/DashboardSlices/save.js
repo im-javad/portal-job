@@ -59,7 +59,7 @@ const Save = ({ save }) => {
         </div>
         <div className="job-apply">
           <button className="mt-6">
-            <Link href={`/jobs/${save.id}`}>Application Details</Link>
+            <Link href={`/jobs/${save.id}`}>View the ad</Link>
           </button>
         </div>
         <div className="deletion-indicated">

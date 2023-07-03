@@ -41,7 +41,7 @@ const Ad = ({ ad }) => {
         </div>
         <div className="view-resumes">
           <button className="mt-6">
-            <Link href={`/jobs/${ad.id}`}>Application Details</Link>
+            <Link href={`/jobs/${ad.id}`}>View the ad</Link>
           </button>
         </div>
         <div className="view-resumes">
