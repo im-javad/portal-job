@@ -2,8 +2,11 @@ import { postingJob } from "@/hooks/job";
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import InputError from "@/components/InputError";
+import Loader from "../Loader";
 
 const AddANewAd = () => {
+  const [loading, setLoading] = useState(false);
+
   const [title, setTitle] = useState("");
   const [companyName, setCompanyName] = useState("");
   const [country, setCountry] = useState("");
@@ -49,6 +52,7 @@ const AddANewAd = () => {
     data.append("img_url", companyImg);
 
     postingJob({
+      setLoading,
       setPostingStatus,
       setPostedId,
       setErrors,
@@ -91,6 +95,7 @@ const AddANewAd = () => {
             Add a new ad
           </button>
           <dialog id="my_modal_4" className="modal">
+            {loading && <Loader />}
             <form method="dialog" className="modal-box w-11/12 max-w-5xl">
               <div className="col-span-12 lg:col-span-6 mb-7">
                 <label htmlFor="title" className="text-appColor_2">

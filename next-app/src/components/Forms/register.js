@@ -1,9 +1,12 @@
 import { register } from "@/hooks/auth";
 import Link from "next/link";
 import { useState } from "react";
+import Loader from "../Loader";
 // import InputError from "@/components/InputError";
 
 const RegisterForm = () => {
+  const [loading, setLoading] = useState(false);
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [role, setRole] = useState("");
@@ -13,6 +16,7 @@ const RegisterForm = () => {
     e.preventDefault();
 
     register({
+      setLoading,
       name,
       email,
       role,
@@ -22,6 +26,7 @@ const RegisterForm = () => {
 
   return (
     <div className="grid grid-cols-12">
+      {loading && <Loader />}
       <div className="form shadow-md shadow-appColor_3 col-span-12 lg:col-span-6 lg:col-start-4 p-6 rounded">
         <div className="col-span-12 lg:col-span-6 mb-7 flex justify-center">
           <h2 className="text-2xl">Register Form</h2>

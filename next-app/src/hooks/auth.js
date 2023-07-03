@@ -14,19 +14,29 @@ export const fetchingUser = async (req) => {
   return user;
 };
 
-export const register = async ({ ...props }) => {
-  axios.post("/api/register", props, {
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
+export const register = async ({ setLoading, ...props }) => {
+  setLoading(true);
+  axios
+    .post("/api/register", props, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+    .then((response) => {
+      setLoading(false);
+    });
 };
 
-export const login = async ({ ...props }) => {
-  axios.post("/api/login", props, {
-    headers: {
-      "Content-Type": "application/json",
-    },
-    withCredentials: true,
-  });
+export const login = async ({ setLoading, ...props }) => {
+  setLoading(true);
+  axios
+    .post("/api/login", props, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      withCredentials: true,
+    })
+    .then((response) => {
+      setLoading(false);
+    });
 };

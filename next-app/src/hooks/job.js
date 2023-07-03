@@ -1,5 +1,4 @@
 import axios from "@/lib/axios";
-import { useRouter } from "next/router";
 
 export const fetchingJobs = async (props) => {
   const jobs = await axios
@@ -20,11 +19,13 @@ export const fetchingJob = async (id) => {
 };
 
 export const postingJob = async ({
+  setLoading,
   setPostingStatus,
   setPostedId,
   setErrors,
   data,
 }) => {
+  setLoading(true);
   setPostingStatus(null);
   setPostedId(null);
   setErrors([]);
@@ -34,8 +35,10 @@ export const postingJob = async ({
     .then((response) => {
       setPostingStatus(response.data.status);
       setPostedId(response.data.ad.id);
+      setLoading(false);
     })
     .catch((error) => {
       setErrors(error.response.data.errors);
+      setLoading(false);
     });
 };

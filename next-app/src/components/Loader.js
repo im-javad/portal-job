@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Loader = () => {
   return (
-    <div className="flex justify-center">
+    <div className="loader z-50">
       <Image src={"/loader.svg"} width={50} height={50} />
     </div>
   );

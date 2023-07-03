@@ -4,8 +4,11 @@ import { useEffect, useState } from "react";
 import { MdApartment, MdLocationOn, MdAccessTimeFilled } from "react-icons/md";
 import Swal from "sweetalert2";
 import InputError from "../InputError";
+import Loader from "../Loader";
 
 const AdInfo = ({ attributes, adId }) => {
+  const [loading, setLoading] = useState(false);
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -24,6 +27,7 @@ const AdInfo = ({ attributes, adId }) => {
     data.append("phone", phone);
 
     postingResume({
+      setLoading,
       setErrors,
       setPostingStatus,
       adId,
@@ -51,8 +55,8 @@ const AdInfo = ({ attributes, adId }) => {
         text: "Please refresh the page and try again after a few seconds",
       });
     }
-
-    setPostingStatus(null);
+    
+    // setPostingStatus(null);
   }, [postingStatus]);
 
   return (
@@ -105,6 +109,7 @@ const AdInfo = ({ attributes, adId }) => {
               </button>
               <dialog id="my_modal_4" className="modal">
                 <form method="dialog" className="modal-box w-11/12 max-w-5xl">
+                  {loading && <Loader />}
                   <div className="col-span-12 lg:col-span-6 mb-7">
                     <label htmlFor="name" className="text-appColor_2">
                       Name

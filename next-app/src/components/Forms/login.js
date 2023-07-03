@@ -1,9 +1,12 @@
 import { login } from "@/hooks/auth";
 import Link from "next/link";
 import { useState } from "react";
+import Loader from "../Loader";
 // import InputError from "@/components/InputError";
 
 const LoginForm = () => {
+  const [loading, setLoading] = useState(false);
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [shouldRemember, setShouldRemember] = useState(false);
@@ -12,6 +15,7 @@ const LoginForm = () => {
     e.preventDefault();
 
     login({
+      setLoading,
       email,
       password,
       remember: shouldRemember,
@@ -20,6 +24,7 @@ const LoginForm = () => {
 
   return (
     <div className="grid grid-cols-12">
+      {loading && <Loader />}
       <div className="form shadow-md shadow-appColor_3 col-span-12 lg:col-span-6 lg:col-start-4 p-6 rounded">
         <div className="col-span-12 lg:col-span-6 mb-7 flex justify-center">
           <h2 className="text-2xl">Login Form</h2>
