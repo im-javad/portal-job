@@ -2,7 +2,7 @@ import { login } from "@/hooks/auth";
 import Link from "next/link";
 import { useState } from "react";
 import Loader from "../Loader";
-// import InputError from "@/components/InputError";
+import InputError from "@/components/InputError";
 
 const LoginForm = () => {
   const [loading, setLoading] = useState(false);
@@ -11,11 +11,14 @@ const LoginForm = () => {
   const [password, setPassword] = useState("");
   const [shouldRemember, setShouldRemember] = useState(false);
 
+  const [errors , setErrors] = useState([]);
+
   const submit = async (e) => {
     e.preventDefault();
 
     login({
       setLoading,
+      setErrors,
       email,
       password,
       remember: shouldRemember,
@@ -44,7 +47,7 @@ const LoginForm = () => {
               placeholder="Type here"
               className="input input-bordered bg-appColor_4 w-full mt-2"
             />
-            {/* <InputError messages={errors.email} className="mt-2" /> */}
+            <InputError messages={errors.email} className="mt-2" />
           </div>
           <div className="col-span-12 mb-7">
             <label htmlFor="password" className="text-appColor_2">
@@ -60,7 +63,7 @@ const LoginForm = () => {
               placeholder="Type here"
               className="input input-bordered bg-appColor_4 w-full mt-2"
             />
-            {/* <InputError messages={errors.password} className="mt-2" /> */}
+            <InputError messages={errors.password} className="mt-2" />
           </div>
           <div className="cols-span-12 mb-7 fkex items-center">
             <input

@@ -2,7 +2,7 @@ import { register } from "@/hooks/auth";
 import Link from "next/link";
 import { useState } from "react";
 import Loader from "../Loader";
-// import InputError from "@/components/InputError";
+import InputError from "@/components/InputError";
 
 const RegisterForm = () => {
   const [loading, setLoading] = useState(false);
@@ -12,11 +12,14 @@ const RegisterForm = () => {
   const [role, setRole] = useState("");
   const [password, setPassword] = useState("");
 
+  const [errors , setErrors] = useState([]);
+
   const submit = async (e) => {
     e.preventDefault();
 
     register({
       setLoading,
+      setErrors,
       name,
       email,
       role,
@@ -46,7 +49,7 @@ const RegisterForm = () => {
               required
               autoFocus
             />
-            {/* <InputError messages={errors.name} className="mt-2" /> */}
+            <InputError messages={errors.name} className="mt-2" />
           </div>
           <div className="col-span-12 lg:col-span-6 mb-7">
             <label htmlFor="email" className="text-appColor_2">
@@ -61,7 +64,7 @@ const RegisterForm = () => {
               placeholder="Type here"
               className="input input-bordered bg-appColor_4 w-full mt-2"
             />
-            {/* <InputError messages={errors.email} className="mt-2" /> */}
+            <InputError messages={errors.email} className="mt-2" />
           </div>
           <div className="col-span-12 mb-7">
             <label htmlFor="role" className="text-appColor_2">
@@ -81,7 +84,7 @@ const RegisterForm = () => {
               <option value="Employer">Employer</option>
               <option value="Job Seeker">Job Seeker</option>
             </select>
-            {/* <InputError messages={errors.role} className="mt-2" /> */}
+            <InputError messages={errors.role} className="mt-2" />
           </div>
           <div className="col-span-12 mb-7">
             <label htmlFor="password" className="text-appColor_2">
@@ -97,7 +100,7 @@ const RegisterForm = () => {
               placeholder="Type here"
               className="input input-bordered bg-appColor_4 w-full mt-2"
             />
-            {/* <InputError messages={errors.password} className="mt-2" /> */}
+            <InputError messages={errors.password} className="mt-2" />
           </div>
           <div className="col-span-12 mb-7">
             <button className="btn w-full normal-case text-lg bg-appColor_2 hover:bg-appColor_2 outline-none text-appColor_4">

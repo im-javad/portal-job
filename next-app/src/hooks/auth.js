@@ -14,7 +14,7 @@ export const fetchingUser = async (req) => {
   return user;
 };
 
-export const register = async ({ setLoading, ...props }) => {
+export const register = async ({ setLoading, setErrors, ...props }) => {
   setLoading(true);
   axios
     .post("/api/register", props, {
@@ -24,10 +24,14 @@ export const register = async ({ setLoading, ...props }) => {
     })
     .then((response) => {
       setLoading(false);
+    })
+    .catch((error) => {
+      setErrors(error.response.data.errors);
+      setLoading(false);
     });
 };
 
-export const login = async ({ setLoading, ...props }) => {
+export const login = async ({ setLoading, setErrors, ...props }) => {
   setLoading(true);
   axios
     .post("/api/login", props, {
@@ -37,6 +41,10 @@ export const login = async ({ setLoading, ...props }) => {
       withCredentials: true,
     })
     .then((response) => {
+      setLoading(false);
+    })
+    .catch((error) => {
+      setErrors(error.response.data.errors);
       setLoading(false);
     });
 };
