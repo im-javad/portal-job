@@ -42,22 +42,17 @@ export const fetchingSaved = async (req) => {
   return saved;
 };
 
-export const removeSave = async (req) => {
-  await axios.delete(`api/dashboard/user/saved/${id}`, {
+export const removeSave = async (id) => {
+  await axios.delete(`/api/dashboard/user/saved/${id}`, {
+    withCredentials: true,
     headers: {
-      Accept: "application/json",
       "Content-Type": "application/json",
-      Authorization: "Bearer " + req.cookies.jwt || "",
     },
   });
 };
 
-export const addSave = async (req) => {
-  await axios.delete(`api/dashboard/user/saved/${id}`, {
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-      Authorization: "Bearer " + req.cookies.jwt || "",
-    },
+export const addSave = async (id) => {
+  await axios.get(`/api/dashboard/user/saved/${id}`, {
+    withCredentials: true,
   });
 };

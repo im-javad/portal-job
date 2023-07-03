@@ -5,6 +5,7 @@ import { MdApartment, MdLocationOn, MdAccessTimeFilled } from "react-icons/md";
 import Swal from "sweetalert2";
 import InputError from "../InputError";
 import Loader from "../Loader";
+import { addSave } from "@/hooks/dashboard";
 
 const AdInfo = ({ attributes, adId }) => {
   const [loading, setLoading] = useState(false);
@@ -16,6 +17,18 @@ const AdInfo = ({ attributes, adId }) => {
 
   const [errors, setErrors] = useState([]);
   const [postingStatus, setPostingStatus] = useState(null);
+
+  const saveJobOperation = async () => {
+    addSave(adId);
+
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "Added save successfully",
+      showCancelButton: false,
+      timer: 2000,
+    });
+  };
 
   const submitForm = async (event) => {
     event.preventDefault();
@@ -55,7 +68,7 @@ const AdInfo = ({ attributes, adId }) => {
         text: "Please refresh the page and try again after a few seconds",
       });
     }
-    
+
     // setPostingStatus(null);
   }, [postingStatus]);
 
@@ -95,7 +108,7 @@ const AdInfo = ({ attributes, adId }) => {
             </div>
           </div>
           <div className="flex justify-between xl:col-span-3 xl:col-start-10 items-center">
-            <div className="w-full">
+            <div className="w-full" onClick={saveJobOperation}>
               <button className="btn w-full bg-appColor_3 text-appColor_4 hover:bg-appColor_3 normal-case text-lg">
                 Save Job
               </button>

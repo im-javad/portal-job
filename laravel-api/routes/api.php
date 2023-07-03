@@ -3,7 +3,7 @@
 use App\Http\Controllers\Api\AdController;
 use App\Http\Controllers\Api\DashboardController;
 use App\Http\Controllers\Api\ResumeController;
-use App\Http\Controllers\api\SaveController;
+use App\Http\Controllers\Api\SaveController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 

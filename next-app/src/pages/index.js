@@ -11,7 +11,7 @@ import { useEffect, useState } from "react";
 const breadcrumbs = { 0: { title: "Home", link: `/` } };
 
 const Home = ({ jobsReceived }) => {
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
 
   const router = useRouter();
 
@@ -30,11 +30,11 @@ const Home = ({ jobsReceived }) => {
     });
   };
 
-  useEffect(() => {
-    if (jobsReceived) {
-      setLoading(false);
-    }
-  });
+  // useEffect(() => {
+  //   if (jobsReceived) {
+  //     setLoading(false);
+  //   }
+  // });
 
   return (
     <>
@@ -42,7 +42,7 @@ const Home = ({ jobsReceived }) => {
         <title>Home</title>
       </Head>
 
-      {loading && <Loader />}
+      {/* {loading && <Loader />} */}
 
       <Breadcrumbs crumbs={breadcrumbs} />
 
