@@ -6,8 +6,11 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import AdContent from "@/components/JobsSlices/adContent";
 import AdInfo from "@/components/JobsSlices/adInfo";
 import Head from "next/head";
+import { useEffect, useState } from "react";
 
 const Job = ({ jobReceived }) => {
+  const [loading, setLoading] = useState(true);
+
   const router = useRouter();
   const { attributes } = jobReceived;
 
@@ -16,15 +19,20 @@ const Job = ({ jobReceived }) => {
     1: { title: "Jobs", link: `/jobs/${jobReceived.id}` },
   };
 
-  if (router.isFallback) {
-    return <Loader />;
-  }
+  useEffect(() => {
+    if (jobReceived) {
+      setLoading(false);
+    }
+  });
 
   return (
     <>
       <Head>
         <title>Job #{jobReceived.id}</title>
       </Head>
+
+      {loading && <Loader />}
+
       <Breadcrumbs crumbs={breadcrumbs} />
 
       <AdInfo attributes={attributes} adId={router.query.job} />

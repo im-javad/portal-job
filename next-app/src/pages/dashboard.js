@@ -1,8 +1,7 @@
 import MainLayout from "@/layouts/MainLayout";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import AddANewAd from "@/components/DashboardSlices/addANewAd";
-
 import {
   fetchingAds,
   fetchingRequests,
@@ -11,22 +10,32 @@ import {
 import MyAds from "@/components/DashboardSlices/myAds";
 import MyRequests from "@/components/DashboardSlices/myRequest";
 import MySaved from "@/components/DashboardSlices/mySaved";
-import axios from "@/lib/axios";
 import Head from "next/head";
+import Loader from "@/components/Loader";
 
 const breadcrumbs = {
   0: { title: "Home", link: `/` },
   1: { title: "Dashboard", link: "/dashboard" },
 };
 const Dashboard = ({ adsReceived, requestsReceived, savedReceived }) => {
+  const [loading, setLoading] = useState(true);
+
   // tip: 1 => ads , 2 => requests , 3 => saved
   const [choosen, setChoosen] = useState(1);
+
+  useEffect(() => {
+    if (adsReceived && requestsReceived && savedReceived) {
+      setLoading(false);
+    }
+  });
 
   return (
     <>
       <Head>
         <title>Dashboard</title>
       </Head>
+
+      {loading && <Loader />}
 
       <div className="container mx-auto px-4">
         <Breadcrumbs crumbs={breadcrumbs} />
