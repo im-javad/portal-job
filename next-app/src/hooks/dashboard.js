@@ -42,17 +42,34 @@ export const fetchingSaved = async (req) => {
   return saved;
 };
 
-export const removeSave = async (id) => {
-  await axios.delete(`/api/dashboard/user/saved/${id}`, {
-    withCredentials: true,
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
+export const removeSave = async (setRemovingStatus, id) => {
+  await axios
+    .delete(`/api/dashboard/user/saved/${id}`, {
+      withCredentials: true,
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+    .then((response) => {
+      setRemovingStatus(response.data.status);
+    })
+    .catch((error) => {
+      setRemovingStatus("fail");
+    });
 };
 
-export const addSave = async (id) => {
-  await axios.get(`/api/dashboard/user/saved/${id}`, {
-    withCredentials: true,
-  });
+export const addSave = async (setLoading, setAddingStatus, id) => {
+  setLoading(true);
+  await axios
+    .get(`/api/dashboard/user/saved/${id}`, {
+      withCredentials: true,
+    })
+    .then((response) => {
+      setAddingStatus(response.data.status);
+      setLoading(false);
+    })
+    .catch((error) => {
+      setAddingStatus("fail");
+      setLoading(false);
+    });
 };

@@ -1,27 +1,45 @@
 import { removeSave } from "@/hooks/dashboard";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 import { MdApartment, MdAccessTimeFilled, MdLocationOn } from "react-icons/md";
 import Swal from "sweetalert2";
 
 const Save = ({ save }) => {
   const { attributes } = save;
 
+  const router = useRouter();
+
+  const [removingStatus, setRemovingStatus] = useState(null);
+
   const removeSaveOperation = async () => {
     const id = save.id;
 
-    removeSave(id);
-
-    Swal.fire({
-      position: "top-end",
-      icon: "success",
-      title: "Removed save successfully",
-      showConfirmButton: false,
-      timer: 2000,
-    });
-
-    window.location.reload(false);
+    removeSave(setRemovingStatus , id);
   };
+
+  useEffect(() => {
+    if (removingStatus == "success") {
+      router.replace(router.asPath);
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Removed save successfully",
+        showConfirmButton: false,
+        timer: 2000,
+      });
+    }
+    if (removingStatus == "fail") {
+      Swal.fire({
+        position: "top-end",
+        icon: "error",
+        title: "Problem",
+        showConfirmButton: false,
+        timer: 2000,
+      });
+    }
+  }, [removingStatus]);
 
   return (
     <div className="job shadow-sm shadow-appColor_3 hover:shadow-appColor_2 p-4 md:mx-4 mb-10 rounded">

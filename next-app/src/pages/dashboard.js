@@ -11,31 +11,20 @@ import MyAds from "@/components/DashboardSlices/myAds";
 import MyRequests from "@/components/DashboardSlices/myRequest";
 import MySaved from "@/components/DashboardSlices/mySaved";
 import Head from "next/head";
-import Loader from "@/components/Loader";
 
 const breadcrumbs = {
   0: { title: "Home", link: `/` },
   1: { title: "Dashboard", link: "/dashboard" },
 };
 const Dashboard = ({ adsReceived, requestsReceived, savedReceived }) => {
-  // const [loading, setLoading] = useState(true);
-
   // tip: 1 => ads , 2 => requests , 3 => saved
   const [choosen, setChoosen] = useState(1);
-
-  // useEffect(() => {
-  //   if (adsReceived && requestsReceived && savedReceived) {
-  //     setLoading(false);
-  //   }
-  // });
 
   return (
     <>
       <Head>
         <title>Dashboard</title>
       </Head>
-
-      {/* {loading && <Loader />} */}
 
       <div className="container mx-auto px-4">
         <Breadcrumbs crumbs={breadcrumbs} />
@@ -95,18 +84,29 @@ const Dashboard = ({ adsReceived, requestsReceived, savedReceived }) => {
 
 export default Dashboard;
 
-export const getServerSideProps = async ({ req }) => {
-  const ads = await fetchingAds(req); //! in try catch (:
-  const requests = await fetchingRequests(req);
-  const saved = await fetchingSaved(req);
+export const getServerSideProps = async (context) => {
+  const { req } = context;
 
-  return {
-    props: {
-      adsReceived: ads,
-      requestsReceived: requests,
-      savedReceived: saved,
-    },
-  };
+  try {
+    const ads = await fetchingAds(req); //! in try catch (:
+    const requests = await fetchingRequests(req);
+    const saved = await fetchingSaved(req);
+
+    return {
+      props: {
+        adsReceived: ads,
+        requestsReceived: requests,
+        savedReceived: saved,
+      },
+    };
+  } catch (error) {
+    return {
+      redirect: {
+        destination: "/login",
+        permanent: false,
+      },
+    };
+  }
 };
 
 Dashboard.getLayout = (page) => {

@@ -34,7 +34,9 @@ class ResumeController extends Controller
 
         $newResume = $this->doStore($ad , $validator);
 
-        return $this->withContent(new ResumeResource($newResume) , 201);
+        return response()->json([
+            'status' => 'success',
+        ])->setStatusCode(201);
     }
 
     /**

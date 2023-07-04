@@ -2,6 +2,7 @@ import MainLayout from "@/layouts/MainLayout";
 import { MdSimCardDownload, MdEmail } from "react-icons/md";
 import { fetchingResumes } from "@/hooks/resume";
 import Resumes from "@/components/advertisementDetailsSlices/resumes";
+import { useRouter } from "next/router";
 
 const AdvertisementDetails = ({ receivedResumes }) => {
   return (

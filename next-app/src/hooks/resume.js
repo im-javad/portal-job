@@ -17,13 +17,13 @@ export const fetchingResumes = async (adId) => {
 };
 
 export const postingResume = async ({
-  // setLoading,
+  setFormLoading,
   setPostingStatus,
   setErrors,
   adId,
   data,
 }) => {
-  setLoading(true);
+  setFormLoading(true);
   setPostingStatus(null);
   setErrors([]);
 
@@ -31,12 +31,12 @@ export const postingResume = async ({
     .post(`/api/ads/${adId}/resumes`, data)
     .then((response) => {
       setPostingStatus(response.data.status);
-      // setLoading(false);
+      setFormLoading(false);
     })
     .catch((error) => {
       setPostingStatus("fail");
       setErrors(error.response.data.errors);
-      // setLoading(false);
+      setFormLoading(false);
     });
 };
 

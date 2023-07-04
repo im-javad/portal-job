@@ -1,7 +1,6 @@
 import Breadcrumbs from "@/components/Breadcrumbs";
 import AdsContent from "@/components/HomeSlices/adsContent";
 import FilteringContent from "@/components/HomeSlices/filteringContent";
-import Loader from "@/components/Loader";
 import { fetchingJobs } from "@/hooks/job";
 import MainLayout from "@/layouts/MainLayout";
 import Head from "next/head";
@@ -11,8 +10,6 @@ import { useEffect, useState } from "react";
 const breadcrumbs = { 0: { title: "Home", link: `/` } };
 
 const Home = ({ jobsReceived }) => {
-  // const [loading, setLoading] = useState(true);
-
   const router = useRouter();
 
   const [cooperationType, setCooperationType] = useState();
@@ -30,19 +27,11 @@ const Home = ({ jobsReceived }) => {
     });
   };
 
-  // useEffect(() => {
-  //   if (jobsReceived) {
-  //     setLoading(false);
-  //   }
-  // });
-
   return (
     <>
       <Head>
         <title>Home</title>
       </Head>
-
-      {/* {loading && <Loader />} */}
 
       <Breadcrumbs crumbs={breadcrumbs} />
 

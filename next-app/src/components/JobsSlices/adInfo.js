@@ -6,28 +6,23 @@ import Swal from "sweetalert2";
 import InputError from "../InputError";
 import Loader from "../Loader";
 import { addSave } from "@/hooks/dashboard";
+import { useRouter } from "next/router";
 
 const AdInfo = ({ attributes, adId }) => {
   const [loading, setLoading] = useState(false);
+  const [formLoading, setFormLoading] = useState(false);
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [resume, setResume] = useState("");
 
+  const [addingStatus, setAddingStatus] = useState(null);
   const [errors, setErrors] = useState([]);
   const [postingStatus, setPostingStatus] = useState(null);
 
   const saveJobOperation = async () => {
-    addSave(adId);
-
-    Swal.fire({
-      position: "top-end",
-      icon: "success",
-      title: "Added save successfully",
-      showCancelButton: false,
-      timer: 2000,
-    });
+    addSave(setLoading, setAddingStatus, adId);
   };
 
   const submitForm = async (event) => {
@@ -40,7 +35,7 @@ const AdInfo = ({ attributes, adId }) => {
     data.append("phone", phone);
 
     postingResume({
-      setLoading,
+      setFormLoading,
       setErrors,
       setPostingStatus,
       adId,
@@ -59,6 +54,16 @@ const AdInfo = ({ attributes, adId }) => {
         footer: '<a href="/dashboard">Go to dashboard</a>',
       });
     }
+    if (addingStatus == "success") {
+      Swal.fire({
+        icon: "success",
+        title: "Added save successfully",
+        showConfirmButton: true,
+        timer: 2000,
+      });
+
+      setAddingStatus(null);
+    }
     if (postingResume == "fail") {
       document.getElementById("my_modal_4").remove();
 
@@ -68,12 +73,20 @@ const AdInfo = ({ attributes, adId }) => {
         text: "Please refresh the page and try again after a few seconds",
       });
     }
-
-    // setPostingStatus(null);
-  }, [postingStatus]);
+    if (addingStatus == "fail") {
+      Swal.fire({
+        icon: "error",
+        title: "Invalid your request",
+        showConfirmButton: true,
+        timer: 2000,
+      });
+      setAddingStatus(null);
+    }
+  }, [postingStatus, addingStatus]);
 
   return (
     <section id="ad-info" className="mb-14">
+      {loading && <Loader />}
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 xl:grid-cols-12">
           <div className="flex flex-col xl:col-span-8">
@@ -122,7 +135,7 @@ const AdInfo = ({ attributes, adId }) => {
               </button>
               <dialog id="my_modal_4" className="modal">
                 <form method="dialog" className="modal-box w-11/12 max-w-5xl">
-                  {loading && <Loader />}
+                  {formLoading && <Loader />}
                   <div className="col-span-12 lg:col-span-6 mb-7">
                     <label htmlFor="name" className="text-appColor_2">
                       Name

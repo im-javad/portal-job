@@ -9,8 +9,6 @@ import Head from "next/head";
 import { useEffect, useState } from "react";
 
 const Job = ({ jobReceived }) => {
-  // const [loading, setLoading] = useState(true);
-
   const router = useRouter();
   const { attributes } = jobReceived;
 
@@ -23,19 +21,11 @@ const Job = ({ jobReceived }) => {
     return <Loader />;
   }
 
-  // useEffect(() => {
-  //   if (jobReceived) {
-  //     setLoading(false);
-  //   }
-  // });
-
   return (
     <>
       <Head>
         <title>Job #{jobReceived.id}</title>
       </Head>
-
-      {/* {loading && <Loader />} */}
 
       <Breadcrumbs crumbs={breadcrumbs} />
 

@@ -3,8 +3,11 @@ import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import InputError from "@/components/InputError";
 import Loader from "../Loader";
+import { useRouter } from "next/router";
 
 const AddANewAd = () => {
+  const router = useRouter();
+
   const [loading, setLoading] = useState(false);
 
   const [title, setTitle] = useState("");
@@ -62,8 +65,8 @@ const AddANewAd = () => {
 
   useEffect(() => {
     if (postingStatus == "success") {
+      router.replace(router.asPath);
       document.getElementById("my_modal_4").remove();
-
       Swal.fire({
         icon: "success",
         text: `Yor ad was registered with ID ${postedId}`,
