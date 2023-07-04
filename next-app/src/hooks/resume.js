@@ -40,10 +40,24 @@ export const postingResume = async ({
     });
 };
 
-export const acceptResume = async ({ adId, resumeId, ...props }) => {
-  axios.put(`/api/ads/${adId}/resumes/${resumeId}`, props);
+export const acceptResume = async ({
+  setUpdatedStatus,
+  adId,
+  resumeId,
+  ...props
+}) => {
+  axios.put(`/api/ads/${adId}/resumes/${resumeId}`, props).then((response) => {
+    setUpdatedStatus("success-accepted");
+  });
 };
 
-export const rejectResume = async ({ adId, resumeId, ...props }) => {
-  axios.put(`/api/ads/${adId}/resumes/${resumeId}`, props);
+export const rejectResume = async ({
+  setUpdatedStatus,
+  adId,
+  resumeId,
+  ...props
+}) => {
+  axios.put(`/api/ads/${adId}/resumes/${resumeId}`, props).then((response) => {
+    setUpdatedStatus("success-rejected");
+  });
 };

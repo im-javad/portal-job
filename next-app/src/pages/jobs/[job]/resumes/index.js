@@ -5,6 +5,8 @@ import Resumes from "@/components/advertisementDetailsSlices/resumes";
 import { useRouter } from "next/router";
 
 const AdvertisementDetails = ({ receivedResumes }) => {
+
+  
   return (
     <section id="advertisement-details">
       <div className="container mx-auto px-2">

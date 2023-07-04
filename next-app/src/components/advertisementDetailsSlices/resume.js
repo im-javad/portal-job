@@ -1,6 +1,7 @@
 import { acceptResume } from "@/hooks/resume";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 import { FaUserTie, FaPhoneAlt, FaFileAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import Swal from "sweetalert2";
@@ -8,29 +9,44 @@ import Swal from "sweetalert2";
 const Resume = ({ resume }) => {
   const { attributes } = resume;
 
+  const [updatedStatus, setUpdatedStatus] = useState();
+
   const router = useRouter();
   const adId = router.query.job;
   const resumeId = resume.id;
 
   const acceptResumeOperation = async (e) => {
-    acceptResume({ adId, resumeId, status: "Accepted" });
-
-    Swal.fire({
-      icon: "success",
-      title: "Successful update",
-      text: "The status of the desired resume was changed to accepted",
-    });
+    acceptResume({ setUpdatedStatus, adId, resumeId, status: "Accepted" });
   };
 
   const rejectResumeOperation = async () => {
-    acceptResume({ adId, resumeId, status: "Rejected" });
-
-    Swal.fire({
-      icon: "success",
-      title: "Successful update",
-      text: "The status of the desired resume was changed to rejected",
-    });
+    acceptResume({ setUpdatedStatus, adId, resumeId, status: "Rejected" });
   };
+
+  useEffect(() => {
+    if (updatedStatus === "success-rejected") {
+      router.replace(router.asPath);
+
+      Swal.fire({
+        icon: "success",
+        title: "Successful update",
+        text: "The status of the desired resume was changed to rejected",
+      });
+
+      setUpdatedStatus(null);
+    }
+    if (updatedStatus === "success-accepted") {
+      router.replace(router.asPath);
+
+      Swal.fire({
+        icon: "success",
+        title: "Successful update",
+        text: "The status of the desired resume was changed to accepted",
+      });
+
+      setUpdatedStatus(null);
+    }
+  }, [updatedStatus]);
 
   return (
     <div className="resume shadow-sm shadow-appColor_3 p-4 rounded lg:col-span-6 lg:mx-3 mb-6">

@@ -46,7 +46,7 @@ const Ad = ({ ad }) => {
         </div>
         <div className="view-resumes">
           <button className="mt-4">
-            <Link href="#">View Resumes</Link>
+            <Link href={`/jobs/${ad.id}/resumes`}>View Resumes</Link>
           </button>
         </div>
         <div className="remove-ad">
