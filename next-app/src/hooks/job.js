@@ -42,3 +42,9 @@ export const postingJob = async ({
       setLoading(false);
     });
 };
+
+export const deletingJob = async (setDeletingStatus, adId) => {
+  axios.delete(`/api/ads/${adId}`).then((response) => {
+    setDeletingStatus('success');
+  });
+};
