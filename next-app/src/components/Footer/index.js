@@ -8,18 +8,18 @@ const Footer = () => {
         className="footer p-10 bg-appColor_4 text-base-content"
       >
         <div>
-          <span className="footer-title">Services</span>
+          <span className="footer-title">Search Trending</span>
           <Link href="#" className="link link-hover">
-            Branding
+            Full Time
           </Link>
           <Link href="#" className="link link-hover">
-            Design
+            Part Time
           </Link>
           <Link href="#" className="link link-hover">
-            Marketing
+            A project
           </Link>
           <Link href="#" className="link link-hover">
-            Advertisement
+            Remote
           </Link>
         </div>
         <div>
@@ -38,15 +38,15 @@ const Footer = () => {
           </Link>
         </div>
         <div>
-          <span className="footer-title">Legal</span>
-          <Link href="#" className="link link-hover">
-            Terms of use
+          <span className="footer-title">Support</span>
+          <Link href="/contact-us" className="link link-hover">
+            Contact Us
           </Link>
           <Link href="#" className="link link-hover">
-            Privacy policy
+            About Us
           </Link>
           <Link href="#" className="link link-hover">
-            Cookie policy
+            Terms of Service
           </Link>
         </div>
       </footer>

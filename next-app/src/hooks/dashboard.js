@@ -1,7 +1,7 @@
 import axios from "@/lib/axios";
 
 export const fetchingAds = async (req) => {
-  const ads = await axios
+  const ads = axios
     .get("/api/dashboard/employer/ads", {
       headers: {
         Accept: "application/json",
@@ -15,7 +15,7 @@ export const fetchingAds = async (req) => {
 };
 
 export const fetchingRequests = async (req) => {
-  const requests = await axios
+  const requests = axios
     .get("/api/dashboard/user/requests", {
       headers: {
         Accept: "application/json",
@@ -29,7 +29,7 @@ export const fetchingRequests = async (req) => {
 };
 
 export const fetchingSaved = async (req) => {
-  const saved = await axios
+  const saved = axios
     .get("/api/dashboard/user/saved", {
       headers: {
         Accept: "application/json",
@@ -43,7 +43,7 @@ export const fetchingSaved = async (req) => {
 };
 
 export const removeSave = async (setRemovingStatus, id) => {
-  await axios
+  axios
     .delete(`/api/dashboard/user/saved/${id}`, {
       withCredentials: true,
       headers: {
@@ -60,7 +60,7 @@ export const removeSave = async (setRemovingStatus, id) => {
 
 export const addSave = async (setLoading, setAddingStatus, id) => {
   setLoading(true);
-  await axios
+  axios
     .get(`/api/dashboard/user/saved/${id}`, {
       withCredentials: true,
     })

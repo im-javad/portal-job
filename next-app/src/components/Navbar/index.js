@@ -1,6 +1,26 @@
+import { isLogin, logout } from "@/hooks/auth";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
+  const router = useRouter();
+
+  const [isLoginStatus, setIsloginStatus] = useState(null);
+
+  const [logoutStatus, setLogoutStatus] = useState("");
+
+  const logoutOperation = async (e) => {
+    logout(setLogoutStatus);
+    router.push("/");
+  };
+
+  useEffect(() => {
+    (async () => {
+      isLogin(setIsloginStatus);
+    })();
+  });
+
   return (
     <div className="navbar bg-appColor_1 mb-5 -z-50">
       <div className="navbar-start">
@@ -30,14 +50,22 @@ const Navbar = () => {
             </li>
             <li>
               <Link href="#">Auth</Link>
-              <ul className="p-2">
-                <li>
-                  <Link href="/login">Login</Link>
-                </li>
-                <li>
-                  <Link href="/register">Register</Link>
-                </li>
-              </ul>
+              {isLoginStatus ? (
+                <ul className="p-2">
+                  <li onClick={logoutOperation}>
+                    <span>Logout</span>
+                  </li>
+                </ul>
+              ) : (
+                <ul className="p-2">
+                  <li>
+                    <Link href="/login">Login</Link>
+                  </li>
+                  <li>
+                    <Link href="/register">Register</Link>
+                  </li>
+                </ul>
+              )}
             </li>
             <li>
               <Link href="/dashboard">Dashboard</Link>
@@ -48,7 +76,7 @@ const Navbar = () => {
           href="#"
           className="btn btn-ghost normal-case text-xl text-appColor_3"
         >
-          daisyUI
+          Job Hip
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
@@ -59,14 +87,22 @@ const Navbar = () => {
           <li tabIndex={0}>
             <details>
               <summary>Auth</summary>
-              <ul className="p-2">
-                <li>
-                  <Link href="/login">Login</Link>
-                </li>
-                <li>
-                  <Link href="/register">Register</Link>
-                </li>
-              </ul>
+              {isLoginStatus ? (
+                <ul className="p-2">
+                  <li onClick={logoutOperation}>
+                    <span>Logout</span>
+                  </li>
+                </ul>
+              ) : (
+                <ul className="p-2">
+                  <li>
+                    <Link href="/login">Login</Link>
+                  </li>
+                  <li>
+                    <Link href="/register">Register</Link>
+                  </li>
+                </ul>
+              )}
             </details>
           </li>
           <li>

@@ -9,7 +9,7 @@ export const fetchingResume = async (adId, resumeId) => {
 };
 
 export const fetchingResumes = async (adId) => {
-  const resumes = await axios
+  const resumes = axios
     .get(`/api/ads/${adId}/resumes`)
     .then((response) => response.data.resumes.data);
 

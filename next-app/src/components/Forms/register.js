@@ -1,10 +1,13 @@
 import { register } from "@/hooks/auth";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Loader from "../Loader";
 import InputError from "@/components/InputError";
+import { useRouter } from "next/router";
 
 const RegisterForm = () => {
+  const router = useRouter();
+
   const [loading, setLoading] = useState(false);
 
   const [name, setName] = useState("");
@@ -12,7 +15,9 @@ const RegisterForm = () => {
   const [role, setRole] = useState("");
   const [password, setPassword] = useState("");
 
-  const [errors , setErrors] = useState([]);
+  const [errors, setErrors] = useState([]);
+
+  const [registerStatus, setRegisterStatus] = useState("");
 
   const submit = async (e) => {
     e.preventDefault();
@@ -20,12 +25,19 @@ const RegisterForm = () => {
     register({
       setLoading,
       setErrors,
+      setRegisterStatus,
       name,
       email,
       role,
       password,
     });
   };
+
+  useEffect(() => {
+    if (registerStatus === "success") {
+      router.push("/login");
+    }
+  }, [registerStatus]);
 
   return (
     <div className="grid grid-cols-12">

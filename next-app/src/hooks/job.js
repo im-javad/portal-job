@@ -1,7 +1,7 @@
 import axios from "@/lib/axios";
 
 export const fetchingJobs = async (props) => {
-  const jobs = await axios
+  const jobs = axios
     .get("/api/ads", {
       params: props,
     })
@@ -11,7 +11,7 @@ export const fetchingJobs = async (props) => {
 };
 
 export const fetchingJob = async (id) => {
-  const job = await axios
+  const job = axios
     .get(`/api/ads/${id}`)
     .then((response) => response.data.ad);
 

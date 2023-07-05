@@ -61,4 +61,10 @@ class AuthController extends Controller
     {
         return auth()->user();
     }
+
+    function userChecker() {
+        return response()->json([
+            'status' => Auth::check(),
+        ]);
+    }
 }

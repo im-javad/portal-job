@@ -1,17 +1,22 @@
 import { login } from "@/hooks/auth";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Loader from "../Loader";
 import InputError from "@/components/InputError";
+import { useRouter } from "next/router";
 
 const LoginForm = () => {
+  const router = useRouter();
+
   const [loading, setLoading] = useState(false);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [shouldRemember, setShouldRemember] = useState(false);
 
-  const [errors , setErrors] = useState([]);
+  const [errors, setErrors] = useState([]);
+
+  const [loginStatus, setLoginStatus] = useState("");
 
   const submit = async (e) => {
     e.preventDefault();
@@ -19,11 +24,18 @@ const LoginForm = () => {
     login({
       setLoading,
       setErrors,
+      setLoginStatus,
       email,
       password,
       remember: shouldRemember,
     });
   };
+
+  useEffect(() => {
+    if (loginStatus === "success") {
+      router.push("/dashboard");
+    }
+  }, [loginStatus]);
 
   return (
     <div className="grid grid-cols-12">
