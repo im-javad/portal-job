@@ -70,6 +70,9 @@ const Navbar = () => {
             <li>
               <Link href="/dashboard">Dashboard</Link>
             </li>
+            <li>
+              <Link href="/contact-us">Contact Us</Link>
+            </li>
           </ul>
         </div>
         <Link
@@ -107,6 +110,9 @@ const Navbar = () => {
           </li>
           <li>
             <Link href="/dashboard">Dashboard</Link>
+          </li>
+          <li>
+            <Link href="/contact-us">Contact Us</Link>
           </li>
         </ul>
       </div>
