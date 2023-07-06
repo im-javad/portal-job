@@ -51,6 +51,7 @@ export default Home;
 
 export const getServerSideProps = async ({ query }) => {
   const jobs = await fetchingJobs({
+    page: query.page,
     title: query.title,
     cooperation_type: query.cooperation_type,
     need_experience: query.need_experience,

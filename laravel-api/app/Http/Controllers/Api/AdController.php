@@ -44,6 +44,10 @@ class AdController extends Controller
             $adsQuery->where('title' , 'like' , '%'.$request->title.'%');
         }
 
+        if(isset($request->page) && $request->page != null){
+            $adsQuery->paginate(15 , ['*'] , 'page' , $request->page);
+        }
+        
         $ads = $adsQuery->get();
         
         return new AdCollection($ads);
