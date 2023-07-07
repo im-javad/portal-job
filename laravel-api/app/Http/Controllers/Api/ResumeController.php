@@ -74,4 +74,17 @@ class ResumeController extends Controller
         
         return $this->noContent(204);
     }
+
+    function savedAndResumeChecker(string $adId) {
+        $sendedResumesIds = auth()->user()->resumes->pluck('ad_id')->toArray();
+        $savedIds = auth()->user()->userSaved->pluck('id')->toArray();
+        return response()->json([
+            'resume' => in_array($adId , $sendedResumesIds),
+            'save' => in_array($adId , $savedIds),
+        ]);
+    }
+
+    function downloadResume(Resume $resume) {
+       return response()->download($resume->resume_url);
+    }
 }

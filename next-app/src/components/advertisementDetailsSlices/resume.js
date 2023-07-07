@@ -8,6 +8,8 @@ import Swal from "sweetalert2";
 
 const Resume = ({ resume }) => {
   const { attributes } = resume;
+  const {status} = attributes;
+  //! DEFINE STATUS CLASS HERE FOR STYLE ...
 
   const [updatedStatus, setUpdatedStatus] = useState();
 
@@ -51,8 +53,8 @@ const Resume = ({ resume }) => {
   return (
     <div className="resume shadow-sm shadow-appColor_3 p-4 rounded lg:col-span-6 lg:mx-3 mb-6">
       <div className="resume-content flex flex-col ">
-        <div className="resume-status flex justify-center text-[#0965a1]">
-          <strong>{attributes.status}</strong>
+        <div className={`resume-status flex justify-center`}>
+          <strong>{status}</strong>
         </div>
         <div className="resume-info mb-6">
           <ul>
@@ -68,10 +70,10 @@ const Resume = ({ resume }) => {
               <FaPhoneAlt className="text-xl" />
               <span className="text-lg ms-3">{attributes.phone}</span>
             </li>
-            <Link href="#" className="flex items-center">
+            <li href="#" className="flex items-center">
               <FaFileAlt className="text-xl" />
               <span className="text-lg ms-3">{attributes.resume_url}</span>
-            </Link>
+            </li>
           </ul>
         </div>
         <div className="resume-operations flex">

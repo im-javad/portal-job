@@ -7,12 +7,12 @@ const Ad = ({ job }) => {
   return (
     <div className="job relative shadow-md shadow-appColor_3 hover:shadow-appColor_2 p-4 md:mx-4 mb-10 rounded">
       <div className="badge job-published absolute badge-accent badge-outline">
-        77 days ago
+        {attributes.created_at}
       </div>
       <div className="job-content flex flex-col ">
         <div className="job-img flex justify-center mb-4">
-          <Image
-            src="/logo.png"
+          <img
+            src={attributes.img_url}
             className="image-full rounded"
             height={75}
             width={75}

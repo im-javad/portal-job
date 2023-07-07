@@ -4,7 +4,6 @@ return [
     'default' => env('FILESYSTEM_DISK', 'local'),
 
     'disks' => [
-
         'local' => [
             'driver' => 'local',
             'root' => storage_path('app'),
@@ -13,15 +12,15 @@ return [
 
         'ad_image_storage' => [
             'driver' => 'local',
-            'root' => public_path('images/ads'),
-            'url' => env('APP_URL').'/storage',
+            'root' => storage_path('app/public/images/ads'),
+            // 'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
             'throw' => false,
         ],
 
         'resume_file_storage' => [
             'driver' => 'local',
-            'root' => public_path('resumes/ads'),
+            'root' => storage_path('app/public'),
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
             'throw' => false,

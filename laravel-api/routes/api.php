@@ -15,6 +15,8 @@ Route::prefix('/ads/{ad}/')->group(function(){
     Route::apiResource('resumes' , ResumeController::class);
 });
 
+Route::get('/resumes/{resume}/download' , [ResumeController::class , 'downloadResume'])->name('resumes.download');
+
 Route::middleware(['auth:sanctum'])->prefix('/dashboard/')->group(function() {
     Route::get('employer/ads' , [DashboardController::class , 'employerAds'])->name('dashboard.ads');
     Route::get('user/requests' , [DashboardController::class , 'userRequests'])->name('dashboard.requests');
@@ -22,6 +24,8 @@ Route::middleware(['auth:sanctum'])->prefix('/dashboard/')->group(function() {
     Route::get('user/saved/{id}' , [SaveController::class , 'addSave'])->name('dashboard.save.add');
     Route::delete('user/saved/{id}' , [SaveController::class , 'removeSave'])->name('dashboard.save.remove');
 });
+
+Route::middleware(['auth:sanctum'])->get('/saved-resume-checker/{id}' , [ResumeController::class , 'savedAndResumeChecker'])->name('save.resume.checker');
 
 Route::post('/register' , [AuthController::class , 'register'])->name('auth.register');
 

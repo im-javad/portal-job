@@ -26,7 +26,8 @@ const AdContent = ({ attributes }) => {
                 <span>Job Description</span>
               </div>
               <div className="content">
-                <p className="txt-anywhere">{attributes.description}</p>
+                <p className="txt-anywhere">{`${attributes.description}`}</p>
+                {console.log(attributes.description)}
               </div>
             </div>
             <div className="responsibilities mb-10">
@@ -90,7 +91,7 @@ const AdContent = ({ attributes }) => {
               <ul>
                 <li className="mb-2">
                   <strong className="text-appColor_2">Published on: </strong>
-                  <span>April 14, 2023</span>
+                  <span>{attributes.created_at}</span>
                 </li>
                 <li className="mb-2">
                   <strong className="text-appColor_2">Vacancy: </strong>

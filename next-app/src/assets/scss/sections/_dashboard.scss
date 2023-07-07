@@ -49,23 +49,6 @@ section#dashboard {
         .job {
           cursor: pointer;
           @include transition();
-          .job-info {
-            .status-waiting {
-              i {
-                color: rgb(9, 101, 161);
-              }
-            }
-            .status-accept {
-              i {
-                color: rgb(0, 170, 51);
-              }
-            }
-            .status-rejected {
-              i {
-                color: rgb(218, 41, 10);
-              }
-            }
-          }
           .application-details,
           .job-apply,
           .deletion-indicated,

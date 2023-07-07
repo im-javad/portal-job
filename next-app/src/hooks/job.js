@@ -1,5 +1,17 @@
 import axios from "@/lib/axios";
 
+export const adCheker = async (setSaveChecker, setResumeChecker, adId) => {
+  axios
+    .get(`/api/saved-resume-checker/${adId}`, {
+      withCredentials: true,
+    })
+    .then((response) => {
+      const { data } = response;
+      setSaveChecker(data.save);
+      setResumeChecker(data.resume);
+    });
+};
+
 export const fetchingJobs = async (props) => {
   const jobs = axios
     .get("/api/ads", {
@@ -11,9 +23,7 @@ export const fetchingJobs = async (props) => {
 };
 
 export const fetchingJob = async (id) => {
-  const job = axios
-    .get(`/api/ads/${id}`)
-    .then((response) => response.data.ad);
+  const job = axios.get(`/api/ads/${id}`).then((response) => response.data.ad);
 
   return job;
 };
@@ -45,6 +55,6 @@ export const postingJob = async ({
 
 export const deletingJob = async (setDeletingStatus, adId) => {
   axios.delete(`/api/ads/${adId}`).then((response) => {
-    setDeletingStatus('success');
+    setDeletingStatus("success");
   });
 };
