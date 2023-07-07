@@ -11,11 +11,11 @@ const AdvertisementDetails = ({ receivedResumes }) => {
     <section id="advertisement-details">
       <div className="container mx-auto px-2">
         <div className="resumes-received mb-20">
-          <div className="header flex items-center text-appColor_2 mb-4">
-            <i className="text-2xl">
+          <div className="header flex items-center text-appColor_2 mb-6">
+            <i className="text-2xl text-appColor_3">
               <MdSimCardDownload />
             </i>
-            <h2 className="text-xl ms-2">Resumes Received</h2>
+            <h2 className="text-xl ms-2 text-appColor_1 font-bold">Resumes Received</h2>
           </div>
           <div className="content grid lg:grid-cols-12">
             <Resumes resumes={receivedResumes} />

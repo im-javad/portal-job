@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Breadcrumbs = ({ crumbs }) => {
   const preparedCrumbs = Object.keys(crumbs).map((key) => (
-    <li className="-z-10">
+    <li className="-z-10 text-appColor_4">
       <Link href={crumbs[key].link} className="cursor-pointer">
         {crumbs[key].title}
       </Link>

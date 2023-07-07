@@ -2,6 +2,8 @@ section#searching {
   .container {
     .search-box {
       input {
+        background-color: $appColor_1;
+        color: $appColor_3;
         &:focus {
           outline-style: none;
           outline-width: none;
@@ -12,6 +14,8 @@ section#searching {
     }
     .search-place {
       select {
+        background-color: $appColor_1;
+        color: $appColor_3;
         &:focus {
           outline-style: none;
           outline-width: none;
@@ -22,6 +26,8 @@ section#searching {
     }
     .search-time {
       select {
+        background-color: $appColor_1;
+        color: $appColor_3;
         &:focus {
           outline-style: none;
           outline-width: none;
@@ -36,8 +42,7 @@ section#searching {
         span {
           font-weight: 650;
         }
-        &:hover{
-          color: $appColor_4;
+        &:hover {
           letter-spacing: 3px;
         }
       }
@@ -51,12 +56,12 @@ section#jobs {
       cursor: pointer;
       @include transition();
       .job-published {
-        min-width: 22%;
+        min-width: 14%;
         transform: rotate(320deg);
         top: 30px;
-        left: 0;
+        left: 3px;
         padding: 13px;
-        color: $appColor_2;
+        color: $appColor_3;
         @include transition();
       }
       .job-content {
@@ -67,9 +72,10 @@ section#jobs {
             font-weight: 700;
             padding: 6px;
             font-size: 17px;
+            padding: 9px;
             border-radius: 10px;
             background-color: $appColor_2;
-            color: $appColor_4;
+            color: $run;
             @include transition();
           }
         }
@@ -77,18 +83,16 @@ section#jobs {
       &:hover {
         .job-apply {
           button {
-            background-color: $appColor_3;
+            background-color: $appColor_1;
+            color: $appColor_3;
           }
-        }
-        .job-published {
-          color: $appColor_3;
         }
       }
     }
     .pagination {
       button {
-        background-color: $appColor_3;
-        color: $appColor_4;
+        background-color: $appColor_1;
+        color: $appColor_3;
       }
     }
   }

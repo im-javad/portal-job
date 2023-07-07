@@ -4,7 +4,8 @@
 
 @layer base {
   html {
-    @apply bg-appColor_1 !important;
+    background-color: #fff !important;
+    color: #212529 !important;
     font-family: "Catamaran", sans-serif;
   }
 }

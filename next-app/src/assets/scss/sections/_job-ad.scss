@@ -6,6 +6,7 @@ section#ad-info {
       &:hover {
         letter-spacing: 3px;
         background-color: $appColor_3;
+        color: $appColor_1;
       }
     }
     .btn-close {
@@ -13,9 +14,9 @@ section#ad-info {
         top: 0;
         right: 2px;
         font-size: 20px;
-        background-color: #1d232a;
         border: none;
         color: red;
+        background-color: $appColor_1;
       }
     }
   }
@@ -28,12 +29,13 @@ section#ad-content {
     margin-bottom: 14px;
     i {
       font-size: 25px;
-      color: $appColor_2;
+      color: $appColor_3;
     }
     span {
       font-size: 20px;
       margin-left: 12px;
-      color: $appColor_2;
+      color: $appColor_1;
+      font-weight: 700;
     }
   }
   .content-ul-structure {

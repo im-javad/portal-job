@@ -15,12 +15,12 @@ const FilteringContent = ({
               type="text"
               onChange={(e) => setTitle(e.target.value)}
               placeholder="Type here"
-              className="input w-full outline-none bg-appColor_4"
+              className="input w-full outline-none"
             />
           </div>
           <div className="search-place mb-4 md:mx-4 grid-cols-1">
             <select
-              className="input w-full outline-none bg-appColor_4"
+              className="input w-full outline-none"
               onChange={(e) => setCooperationType(e.target.value)}
             >
               <option disabled selected>
@@ -35,7 +35,7 @@ const FilteringContent = ({
           </div>
           <div className="search-time mb-4 md:mx-4 grid-cols-1">
             <select
-              className="input w-full outline-none bg-appColor_4"
+              className="input w-full outline-none"
               onChange={(e) => setNeedExperience(e.target.value)}
             >
               <option disabled selected>
@@ -50,7 +50,7 @@ const FilteringContent = ({
             className="search-btn mb-4 md:mx-4 grid-cols-1"
             onClick={doOperation}
           >
-            <button className="input w-full flex items-center justify-center bg-appColor_3 text-appColor_4">
+            <button className="input w-full flex items-center justify-center bg-appColor_2 text-run">
               <MdSearch className="text-xl" />
               <span>Search Job</span>
             </button>

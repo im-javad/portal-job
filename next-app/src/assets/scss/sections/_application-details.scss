@@ -12,7 +12,7 @@ section#application-details {
               display: flex;
               justify-content: center;
               align-items: center;
-              color: $appColor_4;
+              color: $appColor_1;
               font-weight: 750;
               margin-bottom: 10rem;
             }
@@ -44,12 +44,12 @@ section#application-details {
               button {
                 justify-content: center;
                 width: 100%;
+                padding: 9px;
                 font-weight: 700;
-                padding: 6px;
                 font-size: 17px;
                 border-radius: 10px;
                 background-color: $appColor_2;
-                color: $appColor_4;
+                color: $run;
                 @include transition();
               }
             }
@@ -59,6 +59,7 @@ section#application-details {
               .view-ad {
                 button {
                   background-color: $appColor_3;
+                  color: $appColor_1;
                 }
               }
             }

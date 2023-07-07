@@ -19,12 +19,14 @@ section#advertisement-details {
               }
               .resume-accept {
                 button {
-                  background-color: rgb(0, 170, 51);
+                  border: 2px solid $appColor_2;
+                  color: rgb(0, 170, 51);
                 }
               }
               .resume-reject {
                 button {
-                  background-color: rgb(218, 41, 10);
+                  border: 2px solid $appColor_2;
+                  color: rgb(218, 41, 10);
                 }
               }
             }

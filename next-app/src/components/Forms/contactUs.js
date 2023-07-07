@@ -25,11 +25,11 @@ const ContactUsForm = () => {
   };
 
   return (
-    <section className="contact-form col-span-12 lg:col-span-6 mb-14">
+    <section className="contact-form col-span-12 lg:col-span-6 mb-14 bg-appColor_1 rounded-xl p-6">
       <form onSubmit={handleSendMsg}>
         <div className="form grid grid-cols-12">
           <div className="col-span-12 mb-7">
-            <label htmlFor="name" className="text-appColor_3">
+            <label htmlFor="name" className="text-appColor_2">
               Full Name
             </label>
             <input
@@ -38,12 +38,12 @@ const ContactUsForm = () => {
               onChange={(e) => setName(e.target.value)}
               id="name"
               placeholder="Type here"
-              className="input input-bordered bg-appColor_4 w-full mt-2"
+              className="input border-appColor_2 text-appColor_3 bg-appColor_1 w-full mt-2"
               required
             />
           </div>
           <div className="col-span-12 mb-7">
-            <label htmlFor="email" className="text-appColor_3">
+            <label htmlFor="email" className="text-appColor_2">
               Email
             </label>
             <input
@@ -52,12 +52,12 @@ const ContactUsForm = () => {
               onChange={(e) => setEmail(e.target.value)}
               id="email"
               placeholder="Type here"
-              className="input input-bordered bg-appColor_4 w-full mt-2"
+              className="input border-appColor_2 text-appColor_3 bg-appColor_1 w-full mt-2"
               required
             />
           </div>
           <div className="col-span-12 mb-7">
-            <label htmlFor="subject" className="text-appColor_3">
+            <label htmlFor="subject" className="text-appColor_2">
               Subject
             </label>
             <input
@@ -66,12 +66,12 @@ const ContactUsForm = () => {
               onChange={(e) => setSubject(e.target.value)}
               id="subject"
               placeholder="Type here"
-              className="input input-bordered bg-appColor_4 w-full mt-2"
+              className="input border-appColor_2 text-appColor_3 bg-appColor_1 w-full mt-2"
               required
             />
           </div>
           <div className="col-span-12 mb-7">
-            <label htmlFor="message" className="text-appColor_3">
+            <label htmlFor="message" className="text-appColor_2">
               Message
             </label>
             <textarea
@@ -79,14 +79,14 @@ const ContactUsForm = () => {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               placeholder="Write your notes or questions here..."
-              className="textarea textarea-bordered bg-appColor_4 textarea-md w-full mt-2"
+              className="textarea border-appColor_2 text-appColor_3 bg-appColor_1 textarea-md w-full mt-2"
               required
             ></textarea>
           </div>
           <div className="col-span-12 flex justify-center">
             <button
               type="submit"
-              className="btn w-1/2 normal-case bg-appColor_2 ease-in duration-500 border-none text-appColor_4 hover:bg-appColor_3"
+              className="btn w-1/2 normal-case bg-appColor_2 ease-in duration-500 border-none text-run hover:bg-appColor_3 hover:text-appColor_1"
             >
               Send Message
             </button>

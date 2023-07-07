@@ -42,9 +42,9 @@ const RegisterForm = () => {
   return (
     <div className="grid grid-cols-12">
       {loading && <Loader />}
-      <div className="form shadow-md shadow-appColor_3 col-span-12 lg:col-span-6 lg:col-start-4 p-6 rounded">
+      <div className="form col-span-12 lg:col-span-6 lg:col-start-4 p-6 rounded-xl bg-appColor_1">
         <div className="col-span-12 lg:col-span-6 mb-7 flex justify-center">
-          <h2 className="text-2xl">Register Form</h2>
+          <h2 className="text-2xl text-appColor_2 font-bold">Register Form</h2>
         </div>
         <form onSubmit={submit}>
           <div className="col-span-12 lg:col-span-6 mb-7">
@@ -56,7 +56,7 @@ const RegisterForm = () => {
               type="text"
               value={name}
               placeholder="Type here"
-              className="input input-bordered bg-appColor_4 w-full mt-2"
+              className="input border-appColor_2 text-appColor_3 bg-appColor_1 w-full mt-2"
               onChange={(event) => setName(event.target.value)}
               required
               autoFocus
@@ -74,7 +74,7 @@ const RegisterForm = () => {
               onChange={(event) => setEmail(event.target.value)}
               required
               placeholder="Type here"
-              className="input input-bordered bg-appColor_4 w-full mt-2"
+              className="input border-appColor_2 text-appColor_3 bg-appColor_1 w-full mt-2"
             />
             <InputError messages={errors.email} className="mt-2" />
           </div>
@@ -88,7 +88,7 @@ const RegisterForm = () => {
               value={role}
               onChange={(event) => setRole(event.target.value)}
               required
-              className="input input-bordered bg-appColor_4 w-full mt-2"
+              className="input border-appColor_2 text-appColor_3 bg-appColor_1 w-full mt-2"
             >
               <option selected disabled>
                 Select
@@ -110,12 +110,12 @@ const RegisterForm = () => {
               required
               autoComplete="new-password"
               placeholder="Type here"
-              className="input input-bordered bg-appColor_4 w-full mt-2"
+              className="input border-appColor_2 text-appColor_3 bg-appColor_1 w-full mt-2"
             />
             <InputError messages={errors.password} className="mt-2" />
           </div>
           <div className="col-span-12 mb-7">
-            <button className="btn w-full normal-case text-lg bg-appColor_2 hover:bg-appColor_2 outline-none text-appColor_4">
+            <button className="btn w-full normal-case text-lg bg-appColor_2 transition duration-500 ease-in hover:bg-appColor_3 outline-none text-run hover:text-appColor_1">
               Register Now
             </button>
           </div>

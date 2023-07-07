@@ -7,10 +7,12 @@ module.exports = {
   ],
   theme: {
     colors: {
-      appColor_1: "#272727",
-      appColor_2: "#FAB162",
-      appColor_3: "#0bbdb3",
-      appColor_4: "#1a1818",
+      run: "#fff",
+      appColor_1: "#051622",
+      appColor_2: "#1ba098",
+      appColor_3: "#cca57b",
+      appColor_4: "#444444",
+      appColor_5: "#e95d00",
     },
     extend: {},
   },

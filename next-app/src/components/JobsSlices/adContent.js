@@ -87,65 +87,73 @@ const AdContent = ({ attributes }) => {
           </div>
           <div className="xl:col-span-3 xl:col-start-10">
             <div className="border-2 rounded border-appColor_4 p-6 mb-7">
-              <h3 className="text-lg text-appColor_3 mb-3">Job Summary</h3>
+              <h3 className="text-lg text-appColor_2 font-bold mb-3">
+                Job Summary
+              </h3>
               <ul>
                 <li className="mb-2">
-                  <strong className="text-appColor_2">Published on: </strong>
-                  <span>{attributes.created_at}</span>
+                  <strong className="text-appColor_5">Published on: </strong>
+                  <span className="text-appColor_4">
+                    {attributes.created_at}
+                  </span>
                 </li>
                 <li className="mb-2">
-                  <strong className="text-appColor_2">Vacancy: </strong>
-                  <span>{attributes.vancy}</span>
+                  <strong className="text-appColor_5">Vacancy: </strong>
+                  <span className="text-appColor_4">{attributes.vancy}</span>
                 </li>
                 <li className="mb-2">
-                  <strong className="text-appColor_2">
+                  <strong className="text-appColor_5">
                     Employment Status:
                   </strong>
-                  <span> {attributes.cooperation_type}</span>
+                  <span className="text-appColor_4">
+                    {attributes.cooperation_type}
+                  </span>
                 </li>
                 <li className="mb-2">
-                  <strong className="text-appColor_2">Experience: </strong>
-                  <span className=" text-neutral-400">
+                  <strong className="text-appColor_5">Experience: </strong>
+                  <span className="text-appColor_4">
                     {attributes.need_experience} year(s)
                   </span>
                 </li>
                 <li className="mb-2">
-                  <strong className="text-appColor_2">Job Location: </strong>
-                  <span className=" text-neutral-400">
+                  <strong className="text-appColor_5">Job Location: </strong>
+                  <span className="text-appColor_4">
                     {attributes.country}~{attributes.city}
                   </span>
                 </li>
                 <li className="mb-2">
-                  <strong className="text-appColor_2">Gender: </strong>
+                  <strong className="text-appColor_5">Gender: </strong>
                   <span>{attributes.gender}</span>
                 </li>
               </ul>
             </div>
-            <div className="border-2 rounde border-appColor_4 p-6 mb-14">
-              <h3 className="text-lg text-appColor_3 mb-3">Social media</h3>
+            <div className="border-2 rounde rounded border-appColor_4 p-6 mb-14">
+              <h3 className="text-lg text-appColor_2 font-bold mb-3">
+                Social media
+              </h3>
               <ul className="flex">
-                <li className="text-2xl ease-in duration-300 hover:text-appColor_2">
+                <li className="text-2xl ease-in duration-300 text-appColor_5 hover:text-appColor_3">
                   <i>
                     <Link href={attributes.telegram_link ?? "#"}>
                       <RiTelegramFill />
                     </Link>
                   </i>
                 </li>
-                <li className="text-2xl ms-3 ease-in duration-300 hover:text-appColor_2">
+                <li className="text-2xl ms-3 ease-in duration-300 text-appColor_5 hover:text-appColor_3">
                   <i>
                     <Link href={attributes.instagram_link ?? "#"}>
                       <RiInstagramFill />
                     </Link>
                   </i>
                 </li>
-                <li className="text-2xl ms-3 ease-in duration-300 hover:text-appColor_2">
+                <li className="text-2xl ms-3 ease-in duration-300 text-appColor_5 hover:text-appColor_3">
                   <i>
                     <Link href={attributes.facebook_link ?? "#"}>
                       <RiFacebookCircleFill />
                     </Link>
                   </i>
                 </li>
-                <li className="text-2xl ms-3 ease-in duration-300 hover:text-appColor_2">
+                <li className="text-2xl ms-3 ease-in duration-300 text-appColor_5 hover:text-appColor_3">
                   <i>
                     <Link href={attributes.github_link ?? "#"}>
                       <RiGithubFill />
@@ -162,24 +170,3 @@ const AdContent = ({ attributes }) => {
 };
 
 export default AdContent;
-
-{
-  /* <ul>
-  <li>
-    <TiTick className="text-2xl" />
-    <span>Necessitatibus quibusdam facilis</span>
-  </li>
-  <li>
-    <TiTick className="text-2xl" />
-    <span>Velit unde aliquam et voluptas reiciendis non sapiente labore</span>
-  </li>
-  <li>
-    <TiTick className="text-2xl" />
-    <span>Commodi quae ipsum quas est itaque</span>
-  </li>
-  <li>
-    <TiTick className="text-2xl" />
-    <sapn>Lorem ipsum dolor sit amet, consectetur adipisicing elit</sapn>
-  </li>
-</ul>; */
-}

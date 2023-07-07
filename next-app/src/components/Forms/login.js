@@ -40,9 +40,9 @@ const LoginForm = () => {
   return (
     <div className="grid grid-cols-12">
       {loading && <Loader />}
-      <div className="form shadow-md shadow-appColor_3 col-span-12 lg:col-span-6 lg:col-start-4 p-6 rounded">
+      <div className="form bg-appColor_1 col-span-12 lg:col-span-6 lg:col-start-4 p-6 rounded-xl">
         <div className="col-span-12 lg:col-span-6 mb-7 flex justify-center">
-          <h2 className="text-2xl">Login Form</h2>
+          <h2 className="text-2xl text-appColor_2 font-bold">Login Form</h2>
         </div>
         <form onSubmit={submit}>
           <div className="col-span-12 lg:col-span-6 mb-7">
@@ -57,7 +57,7 @@ const LoginForm = () => {
               required
               autoFocus
               placeholder="Type here"
-              className="input input-bordered bg-appColor_4 w-full mt-2"
+              className="input border-appColor_2 text-appColor_3 bg-appColor_1 w-full mt-2"
             />
             <InputError messages={errors.email} className="mt-2" />
           </div>
@@ -73,11 +73,11 @@ const LoginForm = () => {
               required
               autoComplete="current-password"
               placeholder="Type here"
-              className="input input-bordered bg-appColor_4 w-full mt-2"
+              className="input border-appColor_2 text-appColor_3 bg-appColor_1 w-full mt-2"
             />
             <InputError messages={errors.password} className="mt-2" />
           </div>
-          <div className="cols-span-12 mb-7 fkex items-center">
+          <div className="cols-span-12 mb-7 fkex items-center text-appColor_2">
             <input
               id="remember_me"
               type="checkbox"
@@ -87,7 +87,7 @@ const LoginForm = () => {
             <span className="ms-2">Remember Me</span>
           </div>
           <div className="col-span-12 mb-7">
-            <button className="btn w-full normal-case text-lg bg-appColor_2 hover:bg-appColor_2 outline-none text-appColor_4">
+            <button className="btn transition duration-500 ease-in w-full normal-case text-lg bg-appColor_2 hover:bg-appColor_3 outline-none text-run hover:text-appColor_1">
               Let me
             </button>
           </div>

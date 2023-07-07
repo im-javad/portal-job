@@ -92,14 +92,17 @@ const AddANewAd = () => {
             fdf
             ddf
             dfdfdfdfdfdfdf
-            className="btn w-full bg-appColor_3 text-appColor_4 border-none"
+            className="btn w-full bg-appColor_2 text-run border-none hover:bg-appColor_2"
             onClick={() => window.my_modal_4.showModal()}
           >
             Add a new ad
           </button>
           <dialog id="my_modal_4" className="modal">
             {loading && <Loader />}
-            <form method="dialog" className="modal-box w-11/12 max-w-5xl">
+            <form
+              method="dialog"
+              className="modal-box w-11/12 max-w-5xl bg-appColor_1"
+            >
               <div className="col-span-12 lg:col-span-6 mb-7">
                 <label htmlFor="title" className="text-appColor_2">
                   Title
@@ -110,7 +113,7 @@ const AddANewAd = () => {
                   onChange={(event) => setTitle(event.target.value)}
                   autoFocus
                   placeholder="Type here"
-                  className="input input-bordered bg-appColor_4 w-full mt-2"
+                  className="input border-appColor_2 text-appColor_3 bg-appColor_1 w-full mt-2"
                 />
                 <InputError messages={errors.title} className="mt-2" />
               </div>
@@ -124,7 +127,7 @@ const AddANewAd = () => {
                   onChange={(event) => setCompanyName(event.target.value)}
                   autoFocus
                   placeholder="Type here"
-                  className="input input-bordered bg-appColor_4 w-full mt-2"
+                  className="input border-appColor_2 text-appColor_3 bg-appColor_1 w-full mt-2"
                 />
                 <InputError messages={errors.company_name} className="mt-2" />
               </div>
@@ -138,7 +141,7 @@ const AddANewAd = () => {
                   onChange={(event) => setCountry(event.target.value)}
                   autoFocus
                   placeholder="Type here"
-                  className="input input-bordered bg-appColor_4 w-full mt-2"
+                  className="input border-appColor_2 text-appColor_3 bg-appColor_1 w-full mt-2"
                 />
                 <InputError messages={errors.country} className="mt-2" />
               </div>
@@ -152,7 +155,7 @@ const AddANewAd = () => {
                   onChange={(event) => setCity(event.target.value)}
                   autoFocus
                   placeholder="Type here"
-                  className="input input-bordered bg-appColor_4 w-full mt-2"
+                  className="input border-appColor_2 text-appColor_3 bg-appColor_1 w-full mt-2"
                 />
                 <InputError messages={errors.city} className="mt-2" />
               </div>
@@ -164,7 +167,7 @@ const AddANewAd = () => {
                   id="cooperation_type"
                   value={cooperationType}
                   onChange={(event) => setCooperationType(event.target.value)}
-                  className="input input-bordered bg-appColor_4 w-full mt-2"
+                  className="input border-appColor_2 text-appColor_3 bg-appColor_1 w-full mt-2"
                 >
                   <option selected disabled>
                     select cooperation type
@@ -189,7 +192,7 @@ const AddANewAd = () => {
                   onChange={(event) => setCompanyImg(event.target.files[0])}
                   autoFocus
                   placeholder="Type here"
-                  className="file-input file-input-bordered bg-appColor_4 w-full mt-2"
+                  className="file-input border-appColor_2 text-appColor_3 bg-appColor_1 w-full mt-2"
                 />
                 <InputError messages={errors.img_url} className="mt-2" />
               </div>
@@ -204,7 +207,7 @@ const AddANewAd = () => {
                   onChange={(event) => setVancy(event.target.value)}
                   autoFocus
                   placeholder="Type here"
-                  className="input input-bordered bg-appColor_4 w-full mt-2"
+                  className="input border-appColor_2 text-appColor_3 bg-appColor_1 w-full mt-2"
                 />
                 <InputError messages={errors.vancy} className="mt-2" />
               </div>
@@ -219,7 +222,7 @@ const AddANewAd = () => {
                   onChange={(event) => setNeedExperience(event.target.value)}
                   autoFocus
                   placeholder="Type here"
-                  className="input input-bordered bg-appColor_4 w-full mt-2"
+                  className="input border-appColor_2 text-appColor_3 bg-appColor_1 w-full mt-2"
                 />
                 <InputError
                   messages={errors.need_experience}
@@ -235,7 +238,7 @@ const AddANewAd = () => {
                   id="gender"
                   value={gender}
                   onChange={(event) => setGender(event.target.value)}
-                  className="input input-bordered bg-appColor_4 w-full mt-2"
+                  className="input border-appColor_2 text-appColor_3 bg-appColor_1 w-full mt-2"
                 >
                   <option selected disabled>
                     select gender
@@ -256,7 +259,7 @@ const AddANewAd = () => {
                   onChange={(event) => setTelegramLink(event.target.value)}
                   autoFocus
                   placeholder="Type here"
-                  className="input input-bordered bg-appColor_4 w-full mt-2"
+                  className="input border-appColor_2 text-appColor_3 bg-appColor_1 w-full mt-2"
                 />
                 <InputError messages={errors.telegram_link} className="mt-2" />
               </div>
@@ -270,7 +273,7 @@ const AddANewAd = () => {
                   onChange={(event) => setInstagramLink(event.target.value)}
                   autoFocus
                   placeholder="Type here"
-                  className="input input-bordered bg-appColor_4 w-full mt-2"
+                  className="input border-appColor_2 text-appColor_3 bg-appColor_1 w-full mt-2"
                 />
                 <InputError messages={errors.instagram_link} className="mt-2" />
               </div>
@@ -284,7 +287,7 @@ const AddANewAd = () => {
                   onChange={(event) => setFacebookLink(event.target.value)}
                   autoFocus
                   placeholder="Type here"
-                  className="input input-bordered bg-appColor_4 w-full mt-2"
+                  className="input border-appColor_2 text-appColor_3 bg-appColor_1 w-full mt-2"
                 />
                 <InputError messages={errors.facebook_link} className="mt-2" />
               </div>
@@ -298,7 +301,7 @@ const AddANewAd = () => {
                   onChange={(event) => setGithubLink(event.target.value)}
                   autoFocus
                   placeholder="Type here"
-                  className="input input-bordered bg-appColor_4 w-full mt-2"
+                  className="input border-appColor_2 text-appColor_3 bg-appColor_1 w-full mt-2"
                 />
                 <InputError messages={errors.github_link} className="mt-2" />
               </div>
@@ -311,7 +314,7 @@ const AddANewAd = () => {
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
                   placeholder="Write your notes or questions here..."
-                  className="textarea textarea-bordered bg-appColor_4 textarea-md w-full mt-2"
+                  className="textarea border-appColor_2 text-appColor_3 bg-appColor_1 textarea-md w-full mt-2"
                 ></textarea>
                 <InputError messages={errors.description} className="mt-2" />
               </div>
@@ -324,7 +327,7 @@ const AddANewAd = () => {
                   value={responsibilities}
                   onChange={(e) => setResponsibilities(e.target.value)}
                   placeholder="Write your notes or questions here..."
-                  className="textarea textarea-bordered bg-appColor_4 textarea-md w-full mt-2"
+                  className="textarea border-appColor_2 text-appColor_3 bg-appColor_1 textarea-md w-full mt-2"
                 ></textarea>
                 <InputError
                   messages={errors.responsibilities}
@@ -343,7 +346,7 @@ const AddANewAd = () => {
                   value={requiredKnowledgeSkills}
                   onChange={(e) => setRequiredKnowledgeSkills(e.target.value)}
                   placeholder="Write your notes or questions here..."
-                  className="textarea textarea-bordered bg-appColor_4 textarea-md w-full mt-2"
+                  className="textarea border-appColor_2 text-appColor_3 bg-appColor_1 textarea-md w-full mt-2"
                 ></textarea>
                 <InputError
                   messages={errors.required_knowledge_skills}
@@ -359,7 +362,7 @@ const AddANewAd = () => {
                   value={bonusSkills}
                   onChange={(e) => setBonusSkills(e.target.value)}
                   placeholder="Write your notes or questions here..."
-                  className="textarea textarea-bordered bg-appColor_4 textarea-md w-full mt-2"
+                  className="textarea border-appColor_2 text-appColor_3 bg-appColor_1 textarea-md w-full mt-2"
                 ></textarea>
                 <InputError messages={errors.bonus_skills} className="mt-2" />
               </div>
@@ -367,7 +370,7 @@ const AddANewAd = () => {
                 <button className="btn absolute">✗</button>
               </div>
               <div className="flex justify-center" onClick={submitForm}>
-                <button className="btn w-full md:w-1/2 bg-appColor_3 text-appColor_4 border-none">
+                <button className="btn w-full md:w-1/2 bg-appColor_2 hover:bg-appColor_3 hover:text-appColor_1 text-run border-none">
                   Create Ad
                 </button>
               </div>

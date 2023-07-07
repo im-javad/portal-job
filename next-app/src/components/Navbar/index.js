@@ -25,7 +25,10 @@ const Navbar = () => {
     <div className="navbar bg-appColor_1 mb-5 -z-50">
       <div className="navbar-start">
         <div className="dropdown">
-          <label tabIndex={0} className="btn btn-ghost lg:hidden">
+          <label
+            tabIndex={0}
+            className="btn btn-ghost lg:hidden text-appColor_3"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -43,13 +46,13 @@ const Navbar = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 p-2 shadow rounded-box w-52 text-appColor_2 bg-appColor_4"
+            className="menu menu-sm dropdown-content mt-3 p-2 shadow rounded-box w-52 bg-[#1d232a] text-appColor_3"
           >
-            <li>
+            <li className="">
               <Link href="/">Home</Link>
             </li>
             <li>
-              <Link href="#">Auth</Link>
+              <span className="text-appColor_2">Auth</span>
               {isLoginStatus ? (
                 <ul className="p-2">
                   <li onClick={logoutOperation}>
@@ -76,14 +79,14 @@ const Navbar = () => {
           </ul>
         </div>
         <Link
-          href="#"
-          className="btn btn-ghost normal-case text-xl text-appColor_3"
+          href="/"
+          className="btn btn-ghost normal-case text-xl text-appColor_2"
         >
           Job Hip
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 text-appColor_2">
+        <ul className="menu menu-horizontal px-1 text-appColor_3">
           <li>
             <Link href="/">Home</Link>
           </li>
@@ -91,7 +94,7 @@ const Navbar = () => {
             <details>
               <summary>Auth</summary>
               {isLoginStatus ? (
-                <ul className="p-2">
+                <ul className="p-2 bg-[#1d232a]">
                   <li onClick={logoutOperation}>
                     <span>Logout</span>
                   </li>

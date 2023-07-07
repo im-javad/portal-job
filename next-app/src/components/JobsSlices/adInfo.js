@@ -105,19 +105,21 @@ const AdInfo = ({ attributes, adId }) => {
                 />
               </div>
               <div className="md:ms-5 col-span-12 mt-2">
-                <h2 className="text-2xl mb-4 w-full">{attributes.title}</h2>
+                <h2 className="text-2xl mb-4 w-full text-appColor_1">
+                  {attributes.title}
+                </h2>
                 <ul className="flex flex-wrap">
-                  <li className="flex items-center">
+                  <li className="flex items-center text-appColor_4">
                     <MdApartment className="text-xl" />
                     <span className="ms-1">{attributes.company_name}</span>
                   </li>
-                  <li className="flex items-center ms-4 me-4">
+                  <li className="flex items-center ms-4 me-4 text-appColor_4">
                     <MdLocationOn className="text-xl" />
                     <span className="ms-1">
                       {attributes.city}~{attributes.country}
                     </span>
                   </li>
-                  <li className="flex items-center">
+                  <li className="flex items-center text-appColor_4">
                     <MdAccessTimeFilled className="text-lg" />
                     <span className="ms-1">{attributes.cooperation_type}</span>
                   </li>
@@ -128,13 +130,13 @@ const AdInfo = ({ attributes, adId }) => {
           <div className="flex justify-between xl:col-span-3 xl:col-start-10 items-center">
             {saveChecker ? (
               <div className="w-full">
-                <button className="btn w-full bg-appColor_3 text-appColor_4 hover:bg-appColor_3 normal-case text-lg cursor-not-allowed">
+                <button className="btn w-full border-none hover:bg-appColor_3 bg-appColor_3 text-appColor_1 normal-case text-lg cursor-not-allowed">
                   Saved
                 </button>
               </div>
             ) : (
               <div className="w-full" onClick={saveJobOperation}>
-                <button className="btn w-full bg-appColor_3 text-appColor_4 hover:bg-appColor_3 normal-case text-lg">
+                <button className="btn w-full border-none hover:bg-appColor_3 bg-appColor_3 text-appColor_1 normal-case text-lg">
                   Save Job
                 </button>
               </div>
@@ -142,13 +144,13 @@ const AdInfo = ({ attributes, adId }) => {
 
             <div className="w-full ms-9">
               {resumeChecker ? (
-                <button className="btn w-full bg-appColor_2 text-appColor_4 border-none hover:bg-appColor_2 normal-case text-lg cursor-not-allowed">
+                <button className="btn w-full hover:bg-appColor_2 bg-appColor_2 text-run border-none normal-case text-lg cursor-not-allowed">
                   Applied
                 </button>
               ) : (
                 <>
                   <button
-                    className="btn w-full bg-appColor_2 text-appColor_4 border-none hover:bg-appColor_2 normal-case text-lg"
+                    className="btn w-full hover:bg-appColor_2 bg-appColor_2 text-run border-none normal-case text-lg"
                     onClick={() => window.my_modal_4.showModal()}
                   >
                     Apply Now
@@ -156,7 +158,7 @@ const AdInfo = ({ attributes, adId }) => {
                   <dialog id="my_modal_4" className="modal">
                     <form
                       method="dialog"
-                      className="modal-box w-11/12 max-w-5xl"
+                      className="modal-box w-11/12 max-w-5xl bg-appColor_1"
                     >
                       {formLoading && <Loader />}
                       <div className="col-span-12 lg:col-span-6 mb-7">
@@ -168,7 +170,7 @@ const AdInfo = ({ attributes, adId }) => {
                           onChange={(event) => setName(event.target.value)}
                           autoFocus
                           placeholder="Type here"
-                          className="input input-bordered bg-appColor_4 w-full mt-2"
+                          className="input bg-appColor_1 border-appColor_2 text-appColor_3 w-full mt-2"
                         />
                         <InputError messages={errors.name} className="mt-2" />
                       </div>
@@ -180,7 +182,7 @@ const AdInfo = ({ attributes, adId }) => {
                           id="email"
                           onChange={(event) => setEmail(event.target.value)}
                           placeholder="Type here"
-                          className="input input-bordered bg-appColor_4 w-full mt-2"
+                          className="input bg-appColor_1 border-appColor_2 text-appColor_3 w-full mt-2"
                         />
                         <InputError messages={errors.email} className="mt-2" />
                       </div>
@@ -193,7 +195,7 @@ const AdInfo = ({ attributes, adId }) => {
                           type="number"
                           onChange={(event) => setPhone(event.target.value)}
                           placeholder="Type here"
-                          className="input input-bordered bg-appColor_4 w-full mt-2"
+                          className="input bg-appColor_1 border-appColor_2 text-appColor_3 w-full mt-2"
                         />
                         <InputError messages={errors.phone} className="mt-2" />
                       </div>
@@ -206,7 +208,7 @@ const AdInfo = ({ attributes, adId }) => {
                           type="file"
                           onChange={(event) => setResume(event.target.files[0])}
                           placeholder="Type here"
-                          className="file-input file-input-bordered bg-appColor_4 w-full mt-2"
+                          className="file-input border-appColor_2 bg-appColor_1 w-full mt-2"
                         />
                         <InputError
                           messages={errors.resume_url}
@@ -217,7 +219,7 @@ const AdInfo = ({ attributes, adId }) => {
                         <button className="btn absolute">✗</button>
                       </div>
                       <div className="flex justify-center" onClick={submitForm}>
-                        <button className="btn w-full md:w-1/2 bg-appColor_3 text-appColor_4 border-none">
+                        <button className="btn w-full md:w-1/2 bg-appColor_2 text-run border-none">
                           Create Ad
                         </button>
                       </div>

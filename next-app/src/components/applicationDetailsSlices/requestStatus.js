@@ -3,11 +3,13 @@ import { MdClearAll } from "react-icons/md";
 const RequestStatus = ({ status, displayed }) => {
   return (
     <div className="request-status lg:col-span-7 lg:mb-14">
-      <div className="header flex items-center text-appColor_2 mb-4">
-        <i className="text-2xl">
+      <div className="header flex items-center mb-4">
+        <i className="text-2xl text-appColor_3">
           <MdClearAll />
         </i>
-        <h2 className="text-xl ms-2">Application status</h2>
+        <h2 className="text-xl ms-2 text-appColor_1 font-bold">
+          Application status
+        </h2>
       </div>
       <div className="content">
         <div className="custom-steps-part">
@@ -17,7 +19,7 @@ const RequestStatus = ({ status, displayed }) => {
                 <li className="custom-step">1</li>
               </div>
               <div className="col-span-11 ms-3 flex flex-col">
-                <strong>Posted</strong>
+                <strong className="text-appColor_1">Posted</strong>
                 <span>
                   Your resume has been sent to the employer, but the employer
                   has not yet viewed the resume. After viewing the situation

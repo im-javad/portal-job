@@ -51,26 +51,26 @@ const Resume = ({ resume }) => {
   }, [updatedStatus]);
 
   return (
-    <div className="resume shadow-sm shadow-appColor_3 p-4 rounded lg:col-span-6 lg:mx-3 mb-6">
+    <div className="resume bg-appColor_1 p-4 rounded-lg lg:col-span-6 lg:mx-3 mb-6">
       <div className="resume-content flex flex-col ">
-        <div className={`resume-status flex justify-center`}>
-          <strong>{status}</strong>
+        <div className={`resume-status flex justify-center text-appColor_2`}>
+          <strong>• {status} •</strong>
         </div>
         <div className="resume-info mb-6">
           <ul>
-            <li className="flex items-center mb-1">
+            <li className="flex items-center mb-1 text-appColor_3">
               <FaUserTie className="text-xl" />
               <sapn className="text-lg ms-3">{attributes.name}</sapn>
             </li>
-            <li className="flex items-center mb-1">
+            <li className="flex items-center mb-1 text-appColor_3">
               <MdEmail className="text-xl" />
               <span className="text-lg ms-3">{attributes.email}</span>
             </li>
-            <li className="flex items-center mb-2">
+            <li className="flex items-center mb-2 text-appColor_3">
               <FaPhoneAlt className="text-xl" />
               <span className="text-lg ms-3">{attributes.phone}</span>
             </li>
-            <li href="#" className="flex items-center">
+            <li href="#" className="flex items-center text-appColor_3">
               <FaFileAlt className="text-xl" />
               <span className="text-lg ms-3">{attributes.resume_url}</span>
             </li>
