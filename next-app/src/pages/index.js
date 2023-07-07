@@ -42,7 +42,7 @@ const Home = ({ jobsReceived }) => {
         doOperation={addParamsToUrl}
       />
 
-      <AdsContent jobs={jobsReceived} />
+      <AdsContent jobs={jobsReceived} countJobs={jobsReceived.length} />
     </>
   );
 };

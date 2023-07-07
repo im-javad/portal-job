@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import Ads from "./ads";
 import { useEffect, useState } from "react";
 
-const AdsContent = ({ jobs }) => {
+const AdsContent = ({ jobs, countJobs }) => {
   const router = useRouter();
 
   const [page, setPage] = useState(1);
@@ -38,7 +38,7 @@ const AdsContent = ({ jobs }) => {
     <section id="jobs">
       <div className="container mx-auto px-4">
         <div className="flex justify-center text-3xl font-bold mb-7">
-          <h2 className="text-appColor_2">7,777 Job Listed</h2>
+          <h2 className="text-appColor_2">{countJobs} Job Listed</h2>
         </div>
         <Ads jobs={jobs} />
         <div className="pagination join w-full flex justify-center mt-5 mb-14">
