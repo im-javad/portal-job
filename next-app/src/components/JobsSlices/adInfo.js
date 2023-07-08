@@ -8,8 +8,11 @@ import Loader from "../Loader";
 import { addSave } from "@/hooks/dashboard";
 import { useRouter } from "next/router";
 import { adCheker } from "@/hooks/job";
+import { isLogin } from "@/hooks/auth";
 
 const AdInfo = ({ attributes, adId }) => {
+  const router = useRouter();
+
   const [loading, setLoading] = useState(false);
   const [formLoading, setFormLoading] = useState(false);
 
@@ -24,6 +27,8 @@ const AdInfo = ({ attributes, adId }) => {
 
   const [saveChecker, setSaveChecker] = useState(false);
   const [resumeChecker, setResumeChecker] = useState(false);
+
+  const [isLoginStatus, setIsloginStatus] = useState(null);
 
   const saveJobOperation = async () => {
     addSave(setLoading, setAddingStatus, adId);
@@ -48,10 +53,13 @@ const AdInfo = ({ attributes, adId }) => {
   };
 
   useEffect(() => {
-    adCheker(setSaveChecker, setResumeChecker, adId);
-    if (postingStatus == "success") {
-      document.getElementById("my_modal_4").remove();
+    isLogin(setIsloginStatus);
 
+    !isLoginStatus && router.push("/login");
+
+    adCheker(setSaveChecker, setResumeChecker, adId);
+
+    if (postingStatus == "success") {
       Swal.fire({
         icon: "success",
         title: "Successful operation",
@@ -66,12 +74,8 @@ const AdInfo = ({ attributes, adId }) => {
         showConfirmButton: true,
         timer: 2000,
       });
-
-      setAddingStatus(null);
     }
     if (postingResume == "fail") {
-      document.getElementById("my_modal_4").remove();
-
       Swal.fire({
         icon: "error",
         title: "The operation failed",
@@ -85,7 +89,6 @@ const AdInfo = ({ attributes, adId }) => {
         showConfirmButton: true,
         timer: 2000,
       });
-      setAddingStatus(null);
     }
   }, [postingStatus, addingStatus]);
 

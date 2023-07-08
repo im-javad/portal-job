@@ -24,8 +24,18 @@ class NewResumeRequest extends FormRequest
         return [
             'name' => ['required' , 'min:3' , 'max:50' , 'string'],
             'resume_url' => ['required' , 'mimes:pdf,xlx,xls,txt,csv' , 'max:2048'],
-            'email' => ['required' , 'string' , 'min:5' , 'max:200'] ,
-            'phone' => ['required'], 
+            'email' => ['required' , 'email' , 'min:5' , 'max:200'] ,
+            'phone' => ['required' , 'max:13'], 
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'phone.max' => 'The phone field in not invalid.', 
+            'resume_url.required' => 'The resume file is required.',
+            'resume_url.mimes' => 'The resume file must be a file of type: pdf, xlx, xls, txt, csv.',
+            'resume_url.max' => "The resume file must not be greater than 2048 kilobytes.",
         ];
     }
 }

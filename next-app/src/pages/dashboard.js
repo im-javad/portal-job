@@ -84,6 +84,10 @@ const Dashboard = ({ adsReceived, requestsReceived, savedReceived }) => {
 
 export default Dashboard;
 
+Dashboard.getLayout = (page) => {
+  return <MainLayout>{page}</MainLayout>;
+};
+
 export const getServerSideProps = async (context) => {
   const { req } = context;
 
@@ -107,8 +111,4 @@ export const getServerSideProps = async (context) => {
       },
     };
   }
-};
-
-Dashboard.getLayout = (page) => {
-  return <MainLayout>{page}</MainLayout>;
 };

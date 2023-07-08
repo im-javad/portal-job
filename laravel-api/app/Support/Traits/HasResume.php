@@ -3,17 +3,18 @@ namespace App\Support\Traits;
 
 use App\Models\Ad;
 use App\Models\Resume;
+use App\Models\User;
 use Illuminate\Support\Facades\File;
 
 trait HasResume{
-    function doStore(Ad $ad , array $validator) {
+    function doStore(User $user , Ad $ad , array $validator) {
         $resumeFilePath = $validator['resume_url']->store('' , 'resume_file_storage');
         
         unset($validator['resume_url']);
         
         $detailsToCreate = array_merge(
             [
-                'user_id' => auth()->user()->id ?? 1 ,
+                'user_id' => $user->id ,
                 'resume_url' => $resumeFilePath,
                 'displayed' => 0,
                 'status' => 'Not Determined'

@@ -15,6 +15,11 @@ use Illuminate\Http\Request;
 class AdController extends Controller
 {
     use HasAd , WithResponse;
+
+    
+    public function __construct() {
+        $this->middleware(['auth:sanctum'])->except(['index' , 'show']);
+    }
     
     /**
      * Display a listing of the resource.
@@ -60,7 +65,7 @@ class AdController extends Controller
     {
         $validator = $request->validated();
 
-        $newAd = $this->doStore($validator);
+        $newAd = $this->doStore(auth()->user() , $validator);
 
         return $this->withContent(new AdResource($newAd) , 201);
     }
@@ -81,7 +86,7 @@ class AdController extends Controller
         # We could have used the NewAdRequest request as well, but we made a separate request for future data steam
         $validator = $request->validated();
 
-        $this->doUpdate($ad , $validator);
+        $this->doUpdate(auth()->user() , $ad , $validator);
 
         return $this->withContent(new AdResource($ad) , 200);
     }

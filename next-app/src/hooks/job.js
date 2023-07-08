@@ -41,7 +41,7 @@ export const postingJob = async ({
   setErrors([]);
 
   axios
-    .post("/api/ads", data)
+    .post("/api/ads", data, { withCredentials: true })
     .then((response) => {
       setPostingStatus(response.data.status);
       setPostedId(response.data.ad.id);

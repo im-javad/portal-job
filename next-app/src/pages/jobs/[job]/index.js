@@ -7,19 +7,19 @@ import AdContent from "@/components/JobsSlices/adContent";
 import AdInfo from "@/components/JobsSlices/adInfo";
 import Head from "next/head";
 import { useEffect, useState } from "react";
+import { isLogin } from "@/hooks/auth";
 
 const Job = ({ jobReceived }) => {
   const router = useRouter();
+
   const { attributes } = jobReceived;
+
+  const [isLoginStatus, setIsloginStatus] = useState(null);
 
   const breadcrumbs = {
     0: { title: "Home", link: `/` },
     1: { title: "Jobs", link: `/jobs/${jobReceived.id}` },
   };
-
-  if (router.isFallback) {
-    return <Loader />;
-  }
 
   return (
     <>

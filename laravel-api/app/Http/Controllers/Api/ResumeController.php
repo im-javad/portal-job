@@ -17,6 +17,10 @@ class ResumeController extends Controller
 {
     use HasResume , WithResponse;
     
+    public function __construct() {
+        $this->middleware(['auth:sanctum']);
+    }
+    
     /**
      * Display a listing of the resource.
      */
@@ -32,7 +36,7 @@ class ResumeController extends Controller
     {
         $validator = $request->validated();
 
-        $newResume = $this->doStore($ad , $validator);
+        $newResume = $this->doStore(auth()->user() , $ad , $validator);
 
         return response()->json([
             'status' => 'success',

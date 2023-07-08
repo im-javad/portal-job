@@ -28,7 +28,9 @@ export const postingResume = async ({
   setErrors([]);
 
   axios
-    .post(`/api/ads/${adId}/resumes`, data)
+    .post(`/api/ads/${adId}/resumes`, data, {
+      withCredentials: true,
+    })
     .then((response) => {
       setPostingStatus(response.data.status);
       setFormLoading(false);
