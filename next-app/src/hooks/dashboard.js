@@ -4,8 +4,6 @@ export const fetchingAds = async (req) => {
   const ads = axios
     .get("/api/dashboard/employer/ads", {
       headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
         Authorization: "Bearer " + req.cookies.jwt || "",
       },
     })

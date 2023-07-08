@@ -53,10 +53,6 @@ const AdInfo = ({ attributes, adId }) => {
   };
 
   useEffect(() => {
-    isLogin(setIsloginStatus);
-
-    !isLoginStatus && router.push("/login");
-
     adCheker(setSaveChecker, setResumeChecker, adId);
 
     if (postingStatus == "success") {

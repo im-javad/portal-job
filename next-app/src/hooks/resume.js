@@ -1,16 +1,24 @@
 import axios from "@/lib/axios";
 
-export const fetchingResume = async (adId, resumeId) => {
+export const fetchingResume = async (req, adId, resumeId) => {
   const resume = axios
-    .get(`/api/ads/${adId}/resumes/${resumeId}`)
+    .get(`/api/ads/${adId}/resumes/${resumeId}`, {
+      headers: {
+        Authorization: "Bearer " + req.cookies.jwt || "",
+      },
+    })
     .then((response) => response.data.resume);
 
   return resume;
 };
 
-export const fetchingResumes = async (adId) => {
+export const fetchingResumes = async (req, adId) => {
   const resumes = axios
-    .get(`/api/ads/${adId}/resumes`)
+    .get(`/api/ads/${adId}/resumes`, {
+      headers: {
+        Authorization: "Bearer " + req.cookies.jwt || "",
+      },
+    })
     .then((response) => response.data.resumes.data);
 
   return resumes;

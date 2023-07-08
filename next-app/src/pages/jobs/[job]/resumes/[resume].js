@@ -27,9 +27,13 @@ Resume.getLayout = (page) => {
   return <MainLayout>{page}</MainLayout>;
 };
 
-export const getServerSideProps = async ({ params }) => {
+export const getServerSideProps = async (context) => {
   try {
-    const resume = await fetchingResume(params.job, params.resume);
+    const resume = await fetchingResume(
+      context.req,
+      context.params.job,
+      context.params.resume
+    );
 
     return {
       props: {
