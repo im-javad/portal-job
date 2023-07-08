@@ -7,5 +7,6 @@
     background-color: #fff !important;
     color: #212529 !important;
     font-family: "Catamaran", sans-serif;
+    overflow-wrap: anywhere;
   }
 }

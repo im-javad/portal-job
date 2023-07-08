@@ -1,6 +1,7 @@
 import Breadcrumbs from "@/components/Breadcrumbs";
 import AdsContent from "@/components/HomeSlices/adsContent";
 import FilteringContent from "@/components/HomeSlices/filteringContent";
+import WhyUs from "@/components/HomeSlices/whyUs";
 import { fetchingJobs } from "@/hooks/job";
 import MainLayout from "@/layouts/MainLayout";
 import Head from "next/head";
@@ -43,6 +44,8 @@ const Home = ({ jobsReceived }) => {
       />
 
       <AdsContent jobs={jobsReceived} countJobs={jobsReceived.length} />
+
+      <WhyUs />
     </>
   );
 };

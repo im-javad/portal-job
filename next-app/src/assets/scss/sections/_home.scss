@@ -97,3 +97,34 @@ section#jobs {
     }
   }
 }
+
+section#why-us {
+  .container {
+    h3 {
+      font-size: 1.75rem;
+      color: $appColor_1;
+      font-weight: 550;
+      margin-bottom: 2px;
+    }
+    p {
+      color: $appColor_4;
+      margin-bottom: 8px;
+    }
+    .guidance {
+      cursor: pointer;
+      font-weight: 550;
+      font-size: 1rem;
+      color: $appColor_2;
+      .arrow {
+        @include transition();
+        margin-left: 3px;
+        font-size: 1.35rem;
+      }
+      &:hover {
+        .arrow {
+          margin-left: 15px;
+        }
+      }
+    }
+  }
+}
