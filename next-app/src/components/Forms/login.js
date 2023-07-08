@@ -35,6 +35,9 @@ const LoginForm = () => {
     if (loginStatus === "success") {
       router.push("/dashboard");
     }
+    if (loginStatus === "fail") {
+      setErrors({ email: ["The password entered does not match the email"] });
+    }
   }, [loginStatus]);
 
   return (

@@ -69,8 +69,13 @@ export const login = async ({
       setLoading(false);
     })
     .catch((error) => {
-      setErrors(error.response.data.errors);
-      setLoading(false);
+      if (error.response.data.message === "Invalid Credentials") {
+        setLoginStatus("fail");
+        setLoading(false);
+      } else {
+        setErrors(error.response.data.errors);
+        setLoading(false);
+      }
     });
 };
 
