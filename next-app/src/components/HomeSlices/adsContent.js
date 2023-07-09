@@ -1,9 +1,12 @@
 import { useRouter } from "next/router";
 import Ads from "./ads";
 import { useEffect, useState } from "react";
+import Swal from "sweetalert2";
 
 const AdsContent = ({ jobs, countJobs }) => {
   const router = useRouter();
+
+  const [msg, setMsg] = useState(true);
 
   const [page, setPage] = useState(1);
 
@@ -32,6 +35,14 @@ const AdsContent = ({ jobs, countJobs }) => {
         },
       });
     }
+    msg &&
+      Swal.fire({
+        icon: "info",
+        title: "SOON",
+        html: "The site is loading and preparing the data and the current data is experimental and for testing the performance of the site",
+        confirmButtonText: "CONTINUE",
+      });
+    setMsg(false);
   }, [page]);
 
   return (

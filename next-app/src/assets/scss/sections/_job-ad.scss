@@ -1,5 +1,12 @@
 section#ad-info {
   .modal {
+    .auth-error {
+      .login-now {
+        margin-top: 20px;
+        font-size: 20px;
+        color: $appColor_3;
+      }
+    }
     button {
       font-weight: 800;
       @include transition();

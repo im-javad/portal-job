@@ -1,18 +1,17 @@
 import { postingResume } from "@/hooks/resume";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { MdApartment, MdLocationOn, MdAccessTimeFilled } from "react-icons/md";
 import Swal from "sweetalert2";
 import InputError from "../InputError";
 import Loader from "../Loader";
 import { addSave } from "@/hooks/dashboard";
-import { useRouter } from "next/router";
 import { adCheker } from "@/hooks/job";
 import { isLogin } from "@/hooks/auth";
+import Link from "next/link";
+import { GiClick } from "react-icons/gi";
+import Image from "next/image";
 
 const AdInfo = ({ attributes, adId }) => {
-  const router = useRouter();
-
   const [loading, setLoading] = useState(false);
   const [formLoading, setFormLoading] = useState(false);
 
@@ -28,7 +27,7 @@ const AdInfo = ({ attributes, adId }) => {
   const [saveChecker, setSaveChecker] = useState(false);
   const [resumeChecker, setResumeChecker] = useState(false);
 
-  const [isLoginStatus, setIsloginStatus] = useState(null);
+  const [isLoginStatus, setIsloginStatus] = useState(true);
 
   const saveJobOperation = async () => {
     addSave(setLoading, setAddingStatus, adId);
@@ -53,7 +52,9 @@ const AdInfo = ({ attributes, adId }) => {
   };
 
   useEffect(() => {
-    adCheker(setSaveChecker, setResumeChecker, adId);
+    isLogin(setIsloginStatus);
+
+    isLoginStatus === true && adCheker(setSaveChecker, setResumeChecker, adId);
 
     if (postingStatus == "success") {
       Swal.fire({
@@ -72,15 +73,6 @@ const AdInfo = ({ attributes, adId }) => {
         timer: 2000,
       });
     }
-    if (postingResume == "fail") {
-      Swal.fire({
-        icon: "error",
-        title: "The operation failed",
-        text: "Please refresh the page and try again after a few seconds",
-        showConfirmButton: true,
-        timer: 2000,
-      });
-    }
     if (addingStatus == "fail") {
       Swal.fire({
         icon: "error",
@@ -89,7 +81,7 @@ const AdInfo = ({ attributes, adId }) => {
         timer: 2000,
       });
     }
-  }, [postingStatus, addingStatus]);
+  }, [postingStatus, addingStatus, setIsloginStatus]);
 
   return (
     <section id="ad-info" className="mb-14">
@@ -136,9 +128,18 @@ const AdInfo = ({ attributes, adId }) => {
                   Saved
                 </button>
               </div>
-            ) : (
+            ) : isLoginStatus === true ? (
               <div className="w-full" onClick={saveJobOperation}>
                 <button className="btn w-full border-none hover:bg-appColor_3 bg-appColor_3 text-appColor_1 normal-case text-lg">
+                  Save Job
+                </button>
+              </div>
+            ) : (
+              <div className="w-full">
+                <button
+                  className="btn w-full border-none hover:bg-appColor_3 bg-appColor_3 text-appColor_1 normal-case text-lg"
+                  onClick={() => window.my_modal_4.showModal()}
+                >
                   Save Job
                 </button>
               </div>
@@ -162,69 +163,110 @@ const AdInfo = ({ attributes, adId }) => {
                       method="dialog"
                       className="modal-box w-11/12 max-w-5xl bg-appColor_1"
                     >
-                      {formLoading && <Loader />}
-                      <div className="col-span-12 lg:col-span-6 mb-7">
-                        <label htmlFor="name" className="text-appColor_2">
-                          Name
-                        </label>
-                        <input
-                          id="name"
-                          onChange={(event) => setName(event.target.value)}
-                          autoFocus
-                          placeholder="Type here"
-                          className="input bg-appColor_1 border-appColor_2 text-appColor_3 w-full mt-2"
-                        />
-                        <InputError messages={errors.name} className="mt-2" />
-                      </div>
-                      <div className="col-span-12 lg:col-span-6 mb-7">
-                        <label htmlFor="email" className="text-appColor_2">
-                          Email
-                        </label>
-                        <input
-                          id="email"
-                          onChange={(event) => setEmail(event.target.value)}
-                          placeholder="Type here"
-                          className="input bg-appColor_1 border-appColor_2 text-appColor_3 w-full mt-2"
-                        />
-                        <InputError messages={errors.email} className="mt-2" />
-                      </div>
-                      <div className="col-span-12 lg:col-span-6 mb-7">
-                        <label htmlFor="phone" className="text-appColor_2">
-                          Phone
-                        </label>
-                        <input
-                          id="phone"
-                          type="number"
-                          onChange={(event) => setPhone(event.target.value)}
-                          placeholder="Type here"
-                          className="input bg-appColor_1 border-appColor_2 text-appColor_3 w-full mt-2"
-                        />
-                        <InputError messages={errors.phone} className="mt-2" />
-                      </div>
-                      <div className="col-span-12 lg:col-span-6 mb-7">
-                        <label htmlFor="resume_url" className="text-appColor_2">
-                          Your Resume
-                        </label>
-                        <input
-                          id="resume_url"
-                          type="file"
-                          onChange={(event) => setResume(event.target.files[0])}
-                          placeholder="Type here"
-                          className="file-input border-appColor_2 bg-appColor_1 w-full mt-2"
-                        />
-                        <InputError
-                          messages={errors.resume_url}
-                          className="mt-2"
-                        />
-                      </div>
-                      <div className="modal-action btn-close">
-                        <button className="btn absolute">✗</button>
-                      </div>
-                      <div className="flex justify-center" onClick={submitForm}>
-                        <button className="btn w-full md:w-1/2 bg-appColor_2 text-run border-none">
-                          Create Ad
-                        </button>
-                      </div>
+                      {isLoginStatus === false ? (
+                        <Link href="/login">
+                          <div className="auth-error md:flex md:flex-col items-center">
+                            <div>
+                              <Image
+                                className="image-full"
+                                src="/login.avif"
+                                height={350}
+                                width={350}
+                              ></Image>
+                            </div>
+                            <div className="text-center login-now">
+                              <span>Hi, You must be login</span>
+                              <div className="flex justify-center items-center">
+                                <span>Click me</span>
+                                <GiClick className="ms-1" />
+                              </div>
+                            </div>
+                          </div>
+                        </Link>
+                      ) : (
+                        <>
+                          {formLoading && <Loader />}
+                          <div className="col-span-12 lg:col-span-6 mb-7">
+                            <label htmlFor="name" className="text-appColor_2">
+                              Name
+                            </label>
+                            <input
+                              id="name"
+                              onChange={(event) => setName(event.target.value)}
+                              autoFocus
+                              placeholder="Type here"
+                              className="input bg-appColor_1 border-appColor_2 text-appColor_3 w-full mt-2"
+                            />
+                            <InputError
+                              messages={errors.name}
+                              className="mt-2"
+                            />
+                          </div>
+                          <div className="col-span-12 lg:col-span-6 mb-7">
+                            <label htmlFor="email" className="text-appColor_2">
+                              Email
+                            </label>
+                            <input
+                              id="email"
+                              onChange={(event) => setEmail(event.target.value)}
+                              placeholder="Type here"
+                              className="input bg-appColor_1 border-appColor_2 text-appColor_3 w-full mt-2"
+                            />
+                            <InputError
+                              messages={errors.email}
+                              className="mt-2"
+                            />
+                          </div>
+                          <div className="col-span-12 lg:col-span-6 mb-7">
+                            <label htmlFor="phone" className="text-appColor_2">
+                              Phone
+                            </label>
+                            <input
+                              id="phone"
+                              type="number"
+                              onChange={(event) => setPhone(event.target.value)}
+                              placeholder="Type here"
+                              className="input bg-appColor_1 border-appColor_2 text-appColor_3 w-full mt-2"
+                            />
+                            <InputError
+                              messages={errors.phone}
+                              className="mt-2"
+                            />
+                          </div>
+                          <div className="col-span-12 lg:col-span-6 mb-7">
+                            <label
+                              htmlFor="resume_url"
+                              className="text-appColor_2"
+                            >
+                              Your Resume
+                            </label>
+                            <input
+                              id="resume_url"
+                              type="file"
+                              onChange={(event) =>
+                                setResume(event.target.files[0])
+                              }
+                              placeholder="Type here"
+                              className="file-input border-appColor_2 bg-appColor_1 w-full mt-2"
+                            />
+                            <InputError
+                              messages={errors.resume_url}
+                              className="mt-2"
+                            />
+                          </div>
+                          <div className="modal-action btn-close">
+                            <button className="btn absolute">✗</button>
+                          </div>
+                          <div
+                            className="flex justify-center"
+                            onClick={submitForm}
+                          >
+                            <button className="btn w-full md:w-1/2 bg-appColor_2 text-run border-none">
+                              Create Ad
+                            </button>
+                          </div>
+                        </>
+                      )}
                     </form>
                   </dialog>
                 </>
