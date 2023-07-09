@@ -19,7 +19,7 @@ trait HasAd {
         return $newAd;
     }
 
-    function doUpdate(User $user , Ad $ad , array $validator) {
+    function doUpdate(Ad $ad , array $validator) {
         if(isset($validator['img_url'])){
             $imgPath = Cloudinary::upload($validator['img_url']->getRealPath())->getSecurePath();
             // File::delete(public_path("images/ads/{$ad->img_url}"));

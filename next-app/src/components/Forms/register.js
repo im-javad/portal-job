@@ -90,8 +90,8 @@ const RegisterForm = () => {
               required
               className="input border-appColor_2 text-appColor_3 bg-appColor_1 w-full mt-2"
             >
-              <option selected disabled>
-                Select
+              <option selected>
+                Select Your Role
               </option>
               <option value="Employer">Employer</option>
               <option value="Job Seeker">Job Seeker</option>

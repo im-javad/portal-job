@@ -169,7 +169,7 @@ const AddANewAd = () => {
                   onChange={(event) => setCooperationType(event.target.value)}
                   className="input border-appColor_2 text-appColor_3 bg-appColor_1 w-full mt-2"
                 >
-                  <option selected disabled>
+                  <option selected>
                     select cooperation type
                   </option>
                   <option value="Full Time">Full Time</option>
@@ -240,7 +240,7 @@ const AddANewAd = () => {
                   onChange={(event) => setGender(event.target.value)}
                   className="input border-appColor_2 text-appColor_3 bg-appColor_1 w-full mt-2"
                 >
-                  <option selected disabled>
+                  <option selected>
                     select gender
                   </option>
                   <option value="Male">Male</option>
