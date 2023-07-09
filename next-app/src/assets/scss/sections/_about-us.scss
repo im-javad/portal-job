@@ -1,0 +1,25 @@
+section#about-us {
+  .about {
+    .imgs {
+      background-image: url("/11111.jpg");
+      background-image: -webkit-repeating-radial-gradient(
+        center center,
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0.2) 1px,
+        transparent 1px,
+        transparent 100%
+      );
+      background-size: 5px 5px;
+      overflow: hidden;
+    }
+    .content{
+      .contact-us-btn{
+        background-color: $appColor_3;
+        font-weight: 550;
+        color: $appColor_1;
+        padding: 15px;
+        // border-radius: 8px;
+      }
+    }
+  }
+}
