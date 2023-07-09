@@ -23,8 +23,8 @@ const Sent = ({ adDetails, resumeDetails }) => {
         <div className="job border-2 border-appColor_2 p-4 rounded">
           <div className="job-content flex flex-col ">
             <div className="job-img flex justify-center mb-4">
-              <Image
-                src="/logo.png"
+              <img
+                src={adDetails.img_url}
                 className="image-full rounded min-h-[75px]"
                 height={75}
                 width={75}

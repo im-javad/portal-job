@@ -99,9 +99,9 @@ const AdInfo = ({ attributes, adId }) => {
           <div className="flex flex-col xl:col-span-8">
             <div className="grid grid-cols-12 md:flex items-center mb-6 xl:mb-0">
               <div className="col-span-12 flex justify-center">
-                <Image
+                <img
                   className="rounded"
-                  src="/logo.png"
+                  src={attributes.img_url}
                   width={80}
                   height={80}
                 />

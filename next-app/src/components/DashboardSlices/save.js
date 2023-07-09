@@ -43,8 +43,8 @@ const Save = ({ save }) => {
     <div className="job border border-appColor_2 p-4 md:mx-4 mb-10 rounded">
       <div className="job-content flex flex-col ">
         <div className="job-img flex justify-center mb-4">
-          <Image
-            src="/logo.png"
+          <img
+            src={attributes.img_url}
             className="image-full rounded min-h-[75px]"
             height={75}
             width={75}
