@@ -16,27 +16,25 @@ const Save = ({ save }) => {
   const removeSaveOperation = async () => {
     const id = save.id;
 
-    removeSave(setRemovingStatus , id);
+    removeSave(setRemovingStatus, id);
   };
 
   useEffect(() => {
     if (removingStatus == "success") {
       router.replace(router.asPath);
       Swal.fire({
-        position: "top-end",
         icon: "success",
         title: "Removed save successfully",
-        showConfirmButton: false,
         timer: 2000,
+        showConfirmButton: false,
       });
     }
     if (removingStatus == "fail") {
       Swal.fire({
-        position: "top-end",
         icon: "error",
         title: "Problem",
-        showConfirmButton: false,
         timer: 2000,
+        showConfirmButton: false,
       });
     }
   }, [removingStatus]);

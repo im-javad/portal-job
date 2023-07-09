@@ -61,6 +61,7 @@ const AdInfo = ({ attributes, adId }) => {
         title: "Successful operation",
         text: `Your resume has been sent to "${attributes.title}" ad and you can see the result from your dashboard`,
         footer: '<a href="/dashboard">Go to dashboard</a>',
+        showConfirmButton: true,
       });
     }
     if (addingStatus == "success") {
@@ -76,6 +77,8 @@ const AdInfo = ({ attributes, adId }) => {
         icon: "error",
         title: "The operation failed",
         text: "Please refresh the page and try again after a few seconds",
+        showConfirmButton: true,
+        timer: 2000,
       });
     }
     if (addingStatus == "fail") {

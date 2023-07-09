@@ -2,16 +2,22 @@ import { isLogin, logout } from "@/hooks/auth";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
   const router = useRouter();
 
   const [isLoginStatus, setIsloginStatus] = useState(null);
 
-  const [logoutStatus, setLogoutStatus] = useState("");
-
   const logoutOperation = async (e) => {
-    logout(setLogoutStatus);
+    logout();
+    Swal.fire({
+      icon: "success",
+      title: "Logout successful",
+      cancelButtonAriaLabel: false,
+      timer: 2000,
+      showConfirmButton: false,
+    });
     router.push("/");
   };
 

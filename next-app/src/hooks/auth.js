@@ -79,15 +79,11 @@ export const login = async ({
     });
 };
 
-export const logout = async (setLogoutStatus) => {
-  axios
-    .post("/api/logout", null, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-      withCredentials: true,
-    })
-    .then((response) => {
-      setLogoutStatus("success");
-    });
+export const logout = async () => {
+  axios.post("/api/logout", null, {
+    headers: {
+      "Content-Type": "application/json",
+    },
+    withCredentials: true,
+  });
 };

@@ -71,14 +71,17 @@ const AddANewAd = () => {
         icon: "success",
         text: `Yor ad was registered with ID ${postedId}`,
         title: "Successful operation",
+        showConfirmButton: true,
       });
     }
     if (postingStatus == "fail") {
+      router.replace(router.asPath);
       document.getElementById("my_modal_4").remove();
       Swal.fire({
         icon: "error",
         text: `Please refresh the page and try again after a few seconds`,
         title: "The operation failed",
+        showConfirmButton: true,
       });
     }
     setPostingStatus(null);
@@ -169,9 +172,7 @@ const AddANewAd = () => {
                   onChange={(event) => setCooperationType(event.target.value)}
                   className="input border-appColor_2 text-appColor_3 bg-appColor_1 w-full mt-2"
                 >
-                  <option selected>
-                    select cooperation type
-                  </option>
+                  <option selected>select cooperation type</option>
                   <option value="Full Time">Full Time</option>
                   <option value="Part Time">Part Time</option>
                   <option value="Project Oriented">Project Oriented</option>
@@ -240,9 +241,7 @@ const AddANewAd = () => {
                   onChange={(event) => setGender(event.target.value)}
                   className="input border-appColor_2 text-appColor_3 bg-appColor_1 w-full mt-2"
                 >
-                  <option selected>
-                    select gender
-                  </option>
+                  <option selected>select gender</option>
                   <option value="Male">Male</option>
                   <option value="Female">Female</option>
                   <option value="Any">Any</option>

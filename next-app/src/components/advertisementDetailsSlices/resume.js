@@ -8,7 +8,7 @@ import Swal from "sweetalert2";
 
 const Resume = ({ resume }) => {
   const { attributes } = resume;
-  const {status} = attributes;
+  const { status } = attributes;
   //! DEFINE STATUS CLASS HERE FOR STYLE ...
 
   const [updatedStatus, setUpdatedStatus] = useState();
@@ -33,6 +33,8 @@ const Resume = ({ resume }) => {
         icon: "success",
         title: "Successful update",
         text: "The status of the desired resume was changed to rejected",
+        timer: 2000,
+        showConfirmButton: false,
       });
 
       setUpdatedStatus(null);
@@ -44,6 +46,8 @@ const Resume = ({ resume }) => {
         icon: "success",
         title: "Successful update",
         text: "The status of the desired resume was changed to accepted",
+        timer: 2000,
+        showConfirmButton: false,
       });
 
       setUpdatedStatus(null);
