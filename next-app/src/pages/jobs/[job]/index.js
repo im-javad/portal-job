@@ -5,14 +5,11 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import AdContent from "@/components/JobsSlices/adContent";
 import AdInfo from "@/components/JobsSlices/adInfo";
 import Head from "next/head";
-import { useState } from "react";
 
 const Job = ({ jobReceived }) => {
   const router = useRouter();
 
   const { attributes } = jobReceived;
-
-  const [isLoginStatus, setIsloginStatus] = useState(null);
 
   const breadcrumbs = {
     0: { title: "Home", link: `/` },
