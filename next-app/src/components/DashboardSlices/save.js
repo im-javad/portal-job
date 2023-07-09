@@ -76,9 +76,9 @@ const Save = ({ save }) => {
           </ul>
         </div>
         <div className="job-apply">
-          <button className="mt-6">
-            <Link href={`/jobs/${save.id}`}>View the ad</Link>
-          </button>
+          <Link href={`/jobs/${save.id}`}>
+            <button className="mt-6">View the ad</button>
+          </Link>
         </div>
         <div className="deletion-indicated">
           <button className="mt-4" onClick={removeSaveOperation}>

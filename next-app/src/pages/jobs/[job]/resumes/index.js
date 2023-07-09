@@ -3,6 +3,7 @@ import { MdSimCardDownload, MdEmail } from "react-icons/md";
 import { fetchingResumes } from "@/hooks/resume";
 import Resumes from "@/components/advertisementDetailsSlices/resumes";
 import { useRouter } from "next/router";
+import NothingFound from "@/components/NothingFound";
 
 const AdvertisementDetails = ({ receivedResumes }) => {
   return (
@@ -17,9 +18,14 @@ const AdvertisementDetails = ({ receivedResumes }) => {
               Resumes Received
             </h2>
           </div>
-          <div className="content grid lg:grid-cols-12">
-            <Resumes resumes={receivedResumes} />
-          </div>
+
+          {receivedResumes.length === 0 ? (
+            <NothingFound />
+          ) : (
+            <div className="content grid lg:grid-cols-12">
+              <Resumes resumes={receivedResumes} />
+            </div>
+          )}
         </div>
         <div className=""></div>
       </div>

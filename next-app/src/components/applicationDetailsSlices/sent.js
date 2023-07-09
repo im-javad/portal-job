@@ -59,9 +59,9 @@ const Sent = ({ adDetails, resumeDetails }) => {
               </ul>
             </div>
             <div className="view-ad">
-              <button className="mt-6">
-                <Link href={`/jobs/${adDetails.id}`}>View The Ad</Link>
-              </button>
+              <Link href={`/jobs/${adDetails.id}`}>
+                <button className="mt-6">View The Ad</button>
+              </Link>
             </div>
           </div>
         </div>

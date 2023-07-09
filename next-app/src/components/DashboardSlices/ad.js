@@ -75,14 +75,14 @@ const Ad = ({ ad }) => {
           </ul>
         </div>
         <div className="view-resumes">
-          <button className="mt-6">
-            <Link href={`/jobs/${ad.id}`}>View the ad</Link>
-          </button>
+          <Link href={`/jobs/${ad.id}`}>
+            <button className="mt-6">View the ad</button>
+          </Link>
         </div>
         <div className="view-resumes">
-          <button className="mt-4">
-            <Link href={`/jobs/${ad.id}/resumes`}>View Resumes</Link>
-          </button>
+          <Link href={`/jobs/${ad.id}/resumes`}>
+            <button className="mt-4">View Resumes</button>
+          </Link>
         </div>
         <div className="remove-ad">
           <button className="mt-4" onClick={removeAd}>

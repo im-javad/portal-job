@@ -47,11 +47,9 @@ const Request = ({ request }) => {
           </ul>
         </div>
         <div className="application-details">
-          <button className="mt-6">
-            <Link href={`/jobs/${adDetails.id}/resumes/${request.id}`}>
-              Application status
-            </Link>
-          </button>
+          <Link href={`/jobs/${adDetails.id}/resumes/${request.id}`}>
+            <button className="mt-6">Application status</button>
+          </Link>
         </div>
       </div>
     </div>

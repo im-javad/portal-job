@@ -43,11 +43,11 @@ const Ad = ({ job }) => {
             </li>
           </ul>
         </div>
-        <div className="job-apply">
+        <Link href={`/jobs/${job.id}`} className="job-apply">
           <button className="mt-6">
-            <Link href={`/jobs/${job.id}`}>Send Resume</Link>
+            <span>Send Resume</span>
           </button>
-        </div>
+        </Link>
       </div>
     </div>
   );
