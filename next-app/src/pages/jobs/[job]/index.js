@@ -1,13 +1,11 @@
 import MainLayout from "@/layouts/MainLayout";
-import Loader from "@/components/Loader";
 import { fetchingJob } from "@/hooks/job";
 import { useRouter } from "next/router";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import AdContent from "@/components/JobsSlices/adContent";
 import AdInfo from "@/components/JobsSlices/adInfo";
 import Head from "next/head";
-import { useEffect, useState } from "react";
-import { isLogin } from "@/hooks/auth";
+import { useState } from "react";
 
 const Job = ({ jobReceived }) => {
   const router = useRouter();

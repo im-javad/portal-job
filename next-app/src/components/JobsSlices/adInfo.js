@@ -104,7 +104,7 @@ const AdInfo = ({ attributes, adId }) => {
                 />
               </div>
               <div className="md:ms-5 col-span-12 mt-2">
-                <h2 className="text-2xl mb-4 w-full text-appColor_1">
+                <h2 className="text-2xl mb-4 w-full text-appColor_1 font-bold">
                   {attributes.title}
                 </h2>
                 <ul className="flex flex-wrap">
@@ -112,7 +112,7 @@ const AdInfo = ({ attributes, adId }) => {
                     <MdApartment className="text-xl" />
                     <span className="ms-1">{attributes.company_name}</span>
                   </li>
-                  <li className="flex items-center ms-4 me-4 text-appColor_4">
+                  <li className="flex items-center ms-3 me-4 text-appColor_4">
                     <MdLocationOn className="text-xl" />
                     <span className="ms-1">
                       {attributes.city}~{attributes.country}

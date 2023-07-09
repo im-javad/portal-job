@@ -80,7 +80,7 @@ const Footer = () => {
     <>
       <footer
         id="footer"
-        className="footer p-10 bg-appColor_1 text-base-content"
+        className="footer p-10 bg-appColor_1 text-base-content mt-14"
       >
         <div>
           <span className="footer-title">Search Trending</span>

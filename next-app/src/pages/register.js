@@ -15,7 +15,7 @@ const Register = () => {
       <title>Register</title>
     </Head>
     
-      <div className="container mx-auto px-4 mb-20">
+      <div className="container mx-auto px-4 mb-28">
         <Breadcrumbs crumbs={breadcrumbs} />
 
         <RegisterForm />

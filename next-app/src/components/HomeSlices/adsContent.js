@@ -37,11 +37,16 @@ const AdsContent = ({ jobs, countJobs }) => {
   return (
     <section id="jobs">
       <div className="container mx-auto px-4">
-        <div className="flex justify-center text-3xl font-bold mb-7">
-          <h2 className="text-appColor_2">{countJobs} Job Listed</h2>
+        <div className="flex justify-center font-bold flex-col items-center mb-7">
+          <h2 className="text-appColor_2 text-3xl font-bold">
+            {countJobs} Jobs Listed
+          </h2>
+          <h3 className="text-xl text-appColor_4 text-center">
+            Find carefully and your needs
+          </h3>
         </div>
         <Ads jobs={jobs} />
-        <div className="pagination join w-full flex justify-center mt-5 mb-14">
+        <div className="pagination join w-full flex justify-center mb-14">
           <button className="join-item btn" onClick={handlePreviousPage}>
             «
           </button>

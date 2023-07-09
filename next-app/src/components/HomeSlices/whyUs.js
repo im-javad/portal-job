@@ -4,11 +4,11 @@ import { IoArrowRedoCircleOutline } from "react-icons/io5";
 
 const WhyUs = () => {
   return (
-    <section id="why-us">
-      <div className="flex-col flex items-center mb-7">
+    <section id="why-us" className="mt-24 mb-32">
+      <div className="flex-col flex items-center mb-7 px-4">
         <h2 className="text-appColor_2 text-3xl font-bold">Why Us?</h2>
         <h3 className="text-xl font-bold text-appColor_4 text-center">
-          Domain name registration is only the beginning
+          One of the reasons that make you trust
         </h3>
       </div>
       <div className="container mx-auto px-4">
@@ -17,13 +17,13 @@ const WhyUs = () => {
             <Image height={300} width={300} src="/Relationship.avif"></Image>
           </div>
           <div className="content w-full md:w-5/12 flex flex-col">
-            <h3>Hellllooo</h3>
+            <h3>Strong network</h3>
             <p>
-              Register a domain name and create your online identity. Use our
-              advanced domain name generator to get your ideal choice right
-              away. Already have a domain registered somewhere else? No problem
-              — domain transfers are free and easy.Register a domain name and
-              create your online identity.
+              ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Egestas purus
+              viverra accumsan in nisl nisi. Arcu cursus vitae congue mauris
+              rhoncus aenean vel elit scelerisque. In egestas erat imperdiet sed
+              euismod nisi porta lorem mollis.
             </p>
             <div className="guidance flex items-center">
               <Link href="#">Discover all domain extensions</Link>
@@ -33,13 +33,13 @@ const WhyUs = () => {
         </div>
         <div className="right-part flex md:flex-row md:justify-around items-center flex-col mb-14">
           <div className="content w-full md:w-5/12 flex-col hidden md:flex">
-            <h3>Hellllooo</h3>
+            <h3>Low cost and free</h3>
             <p>
-              Register a domain name and create your online identity. Use our
-              advanced domain name generator to get your ideal choice right
-              away. Already have a domain registered somewhere else? No problem
-              — domain transfers are free and easy.Register a domain name and
-              create your online identity.
+              ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Egestas purus
+              viverra accumsan in nisl nisi. Arcu cursus vitae congue mauris
+              rhoncus aenean vel elit scelerisque. In egestas erat imperdiet sed
+              euismod nisi porta lorem mollis.
             </p>
             <div className="guidance flex items-center">
               <Link href="#">Discover all domain extensions</Link>
@@ -50,13 +50,13 @@ const WhyUs = () => {
             <Image height={300} width={300} src="/time.avif"></Image>
           </div>
           <div className="content w-full flex flex-col md:hidden">
-            <h3>Hellllooo</h3>
+            <h3>Support 24/7</h3>
             <p>
-              Register a domain name and create your online identity. Use our
-              advanced domain name generator to get your ideal choice right
-              away. Already have a domain registered somewhere else? No problem
-              — domain transfers are free and easy.Register a domain name and
-              create your online identity.
+              ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Egestas purus
+              viverra accumsan in nisl nisi. Arcu cursus vitae congue mauris
+              rhoncus aenean vel elit scelerisque. In egestas erat imperdiet sed
+              euismod nisi porta lorem mollis.
             </p>
             <div className="guidance flex items-center">
               <Link href="#">Discover all domain extensions</Link>
@@ -69,13 +69,13 @@ const WhyUs = () => {
             <Image height={300} width={300} src="/support.avif"></Image>
           </div>
           <div className="content w-full md:w-5/12 flex flex-col">
-            <h3>Hellllooo</h3>
+            <h3>Support 24/7</h3>
             <p>
-              Register a domain name and create your online identity. Use our
-              advanced domain name generator to get your ideal choice right
-              away. Already have a domain registered somewhere else? No problem
-              — domain transfers are free and easy.Register a domain name and
-              create your online identity.
+              ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Egestas purus
+              viverra accumsan in nisl nisi. Arcu cursus vitae congue mauris
+              rhoncus aenean vel elit scelerisque. In egestas erat imperdiet sed
+              euismod nisi porta lorem mollis.
             </p>
             <div className="guidance flex items-center">
               <Link href="#">Discover all domain extensions</Link>
@@ -85,13 +85,13 @@ const WhyUs = () => {
         </div>
         <div className="right-part flex md:flex-row md:justify-around items-center flex-col mb-14">
           <div className="content w-full md:w-5/12 flex-col hidden md:flex">
-            <h3>Hellllooo</h3>
+            <h3>Simple and convenient</h3>
             <p>
-              Register a domain name and create your online identity. Use our
-              advanced domain name generator to get your ideal choice right
-              away. Already have a domain registered somewhere else? No problem
-              — domain transfers are free and easy.Register a domain name and
-              create your online identity.
+              ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Egestas purus
+              viverra accumsan in nisl nisi. Arcu cursus vitae congue mauris
+              rhoncus aenean vel elit scelerisque. In egestas erat imperdiet sed
+              euismod nisi porta lorem mollis.
             </p>
             <div className="guidance flex items-center">
               <Link href="#">Discover all domain extensions</Link>
@@ -102,13 +102,13 @@ const WhyUs = () => {
             <Image height={300} width={300} src="/easy.avif"></Image>
           </div>
           <div className="content w-full flex flex-col md:hidden">
-            <h3>Hellllooo</h3>
+            <h3>Simple and convenient</h3>
             <p>
-              Register a domain name and create your online identity. Use our
-              advanced domain name generator to get your ideal choice right
-              away. Already have a domain registered somewhere else? No problem
-              — domain transfers are free and easy.Register a domain name and
-              create your online identity.
+              ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Egestas purus
+              viverra accumsan in nisl nisi. Arcu cursus vitae congue mauris
+              rhoncus aenean vel elit scelerisque. In egestas erat imperdiet sed
+              euismod nisi porta lorem mollis.
             </p>
             <div className="guidance flex items-center">
               <Link href="#">Discover all domain extensions</Link>

@@ -98,7 +98,7 @@ const LoginForm = () => {
         <div className="col-span-12 mb-7">
           <div className="flex flex-col">
             <strong className="text-appColor_3 mb-2">
-              <Link href="#"># or register a new account</Link>
+              <Link href="/register"># or register a new account</Link>
             </strong>
             <strong className="text-appColor_3">
               <Link href="#"># Forget your password?</Link>

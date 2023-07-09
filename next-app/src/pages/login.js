@@ -15,7 +15,7 @@ const Login = () => {
         <title>Login</title>
       </Head>
       
-      <div className="container mx-auto px-4 mb-14">
+      <div className="container mx-auto px-4 mb-28">
         <Breadcrumbs crumbs={breadcrumbs} />
 
         <LoginForm />
