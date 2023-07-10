@@ -1,8 +1,11 @@
 import Image from "next/image";
 
-const Loader = () => {
+const Loader = ({ notPage }) => {
   return (
-    <div className="loader z-50 hidden" id="loader">
+    <div
+      className={`loader z-50 ${notPage ? "notPage" : "onPage"}`}
+      id="loader"
+    >
       <Image
         src={"/loader.svg"}
         className="img-loader"

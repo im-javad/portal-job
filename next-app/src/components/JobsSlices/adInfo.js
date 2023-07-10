@@ -81,11 +81,12 @@ const AdInfo = ({ attributes, adId }) => {
         timer: 2000,
       });
     }
+    setAddingStatus(null);
   }, [postingStatus, addingStatus, setIsloginStatus]);
 
   return (
     <section id="ad-info" className="mb-14">
-      {loading && <Loader />}
+      {loading && <Loader notPage={true} />}
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 xl:grid-cols-12">
           <div className="flex flex-col xl:col-span-8">
@@ -185,7 +186,7 @@ const AdInfo = ({ attributes, adId }) => {
                         </Link>
                       ) : (
                         <>
-                          {formLoading && <Loader />}
+                          {formLoading && <Loader notPage={true} />}
                           <div className="col-span-12 lg:col-span-6 mb-7">
                             <label htmlFor="name" className="text-appColor_2">
                               Name

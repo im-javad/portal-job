@@ -41,7 +41,7 @@ const RegisterForm = () => {
 
   return (
     <div className="grid grid-cols-12">
-      {loading && <Loader />}
+      {loading && <Loader notPage={true} />}
       <div className="form col-span-12 lg:col-span-6 lg:col-start-4 p-6 rounded-xl bg-appColor_1">
         <div className="col-span-12 lg:col-span-6 mb-7 flex justify-center">
           <h2 className="text-2xl text-appColor_2 font-bold">Register Form</h2>
@@ -90,9 +90,7 @@ const RegisterForm = () => {
               required
               className="input border-appColor_2 text-appColor_3 bg-appColor_1 w-full mt-2"
             >
-              <option selected>
-                Select Your Role
-              </option>
+              <option selected>Select Your Role</option>
               <option value="Employer">Employer</option>
               <option value="Job Seeker">Job Seeker</option>
             </select>

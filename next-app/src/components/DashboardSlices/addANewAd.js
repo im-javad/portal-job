@@ -101,7 +101,7 @@ const AddANewAd = () => {
             Add a new ad
           </button>
           <dialog id="my_modal_4" className="modal">
-            {loading && <Loader />}
+            {loading && <Loader notPage={true} />}
             <form
               method="dialog"
               className="modal-box w-11/12 max-w-5xl bg-appColor_1"
