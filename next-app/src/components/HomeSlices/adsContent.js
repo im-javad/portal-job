@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import Ads from "./ads";
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
+import NothingFound from "../NothingFound";
 
 const AdsContent = ({ jobs, countJobs }) => {
   const router = useRouter();
@@ -56,7 +57,8 @@ const AdsContent = ({ jobs, countJobs }) => {
             Find carefully and your needs
           </h3>
         </div>
-        <Ads jobs={jobs} />
+        {jobs.length === 0 ? <NothingFound /> : <Ads jobs={jobs} />}
+
         <div className="pagination join w-full flex justify-center mb-14">
           <button className="join-item btn" onClick={handlePreviousPage}>
             «

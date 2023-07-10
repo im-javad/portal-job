@@ -7,17 +7,8 @@
   top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
+  display: none;
   align-items: center;
-  strong {
-    color: #000000;
-    background: #ffffff;
-    padding: 5px;
-    border-radius: 17px;
-    padding-right: 15px;
-    padding-left: 15px;
-  }
 }
 
 .accepted {

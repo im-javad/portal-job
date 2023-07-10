@@ -5,75 +5,35 @@ const Footer = () => {
   const router = useRouter();
 
   const searchingPhp = () => {
-    router.replace({
-      query: {
-        ...router.query,
-        title: "php",
-      },
-    });
+    router.push("/?title=php");
   };
 
   const searchingReact = () => {
-    router.replace({
-      query: {
-        ...router.query,
-        title: "react",
-      },
-    });
+    router.push("/?title=react");
   };
 
   const searchingJavascript = () => {
-    router.replace({
-      query: {
-        ...router.query,
-        title: "javascript",
-      },
-    });
+    router.push("/?title=javascript");
   };
 
   const searchingNextjs = () => {
-    router.replace({
-      query: {
-        ...router.query,
-        title: "nextjs",
-      },
-    });
+    router.push("/?title=next");
   };
 
   const searchingPython = () => {
-    router.replace({
-      query: {
-        ...router.query,
-        title: "python",
-      },
-    });
+    router.push("/?title=python");
   };
 
   const seniorFoundation = () => {
-    router.replace({
-      query: {
-        ...router.query,
-        need_experience: "ov-3",
-      },
-    });
+    router.push("/?need_experience=ov-3");
   };
 
   const juniorFoundation = () => {
-    router.replace({
-      query: {
-        ...router.query,
-        need_experience: "ud-3",
-      },
-    });
+    router.push("/?need_experience=ud-3");
   };
 
   const midLevelFoundation = () => {
-    router.replace({
-      query: {
-        ...router.query,
-        need_experience: "all",
-      },
-    });
+    router.push("/?need_experience=all");
   };
 
   return (
