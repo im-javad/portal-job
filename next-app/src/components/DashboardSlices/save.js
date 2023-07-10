@@ -37,6 +37,7 @@ const Save = ({ save }) => {
         showConfirmButton: false,
       });
     }
+    setRemovingStatus(null);
   }, [removingStatus]);
 
   return (

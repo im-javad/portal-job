@@ -23,3 +23,26 @@
   color: rgb(9, 101, 161);
 }
 
+.notifications {
+  position: absolute;
+  top: 68px;
+  background: #1d232a;
+  color: $appColor_5;
+  right: 7px;
+  display: flex;
+  align-items: center;
+  min-width: 14rem;
+  border-radius: 15px;
+  min-height: 13rem;
+  padding: 14px;
+  .messages {
+    .sad-emoji {
+      font-size: 30px;
+      width: 100%;
+      margin-bottom: 2px;
+    }
+    .no-message {
+      font-weight: 550;
+    }
+  }
+}

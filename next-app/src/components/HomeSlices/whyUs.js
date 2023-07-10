@@ -26,7 +26,7 @@ const WhyUs = () => {
               euismod nisi porta lorem mollis.
             </p>
             <div className="guidance flex items-center">
-              <Link href="#">Discover all domain extensions</Link>
+              <Link href="/about-us">Read more about details</Link>
               <IoArrowRedoCircleOutline className="arrow" />
             </div>
           </div>
@@ -42,7 +42,7 @@ const WhyUs = () => {
               euismod nisi porta lorem mollis.
             </p>
             <div className="guidance flex items-center">
-              <Link href="#">Discover all domain extensions</Link>
+              <Link href="/about-us">Read more about details</Link>
               <IoArrowRedoCircleOutline className="arrow" />
             </div>
           </div>
@@ -59,7 +59,7 @@ const WhyUs = () => {
               euismod nisi porta lorem mollis.
             </p>
             <div className="guidance flex items-center">
-              <Link href="#">Discover all domain extensions</Link>
+              <Link href="/about-us">Read more about details</Link>
               <IoArrowRedoCircleOutline className="arrow" />
             </div>
           </div>
@@ -78,7 +78,7 @@ const WhyUs = () => {
               euismod nisi porta lorem mollis.
             </p>
             <div className="guidance flex items-center">
-              <Link href="#">Discover all domain extensions</Link>
+              <Link href="/about-us">Read more about details</Link>
               <IoArrowRedoCircleOutline className="arrow" />
             </div>
           </div>
@@ -94,7 +94,7 @@ const WhyUs = () => {
               euismod nisi porta lorem mollis.
             </p>
             <div className="guidance flex items-center">
-              <Link href="#">Discover all domain extensions</Link>
+              <Link href="/about-us">Read more about details</Link>
               <IoArrowRedoCircleOutline className="arrow" />
             </div>
           </div>
@@ -111,7 +111,7 @@ const WhyUs = () => {
               euismod nisi porta lorem mollis.
             </p>
             <div className="guidance flex items-center">
-              <Link href="#">Discover all domain extensions</Link>
+              <Link href="/about-us">Read more about details</Link>
               <IoArrowRedoCircleOutline className="arrow" />
             </div>
           </div>

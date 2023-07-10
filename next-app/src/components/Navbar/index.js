@@ -3,11 +3,18 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
+import { FaFaceSadTear } from "react-icons/fa6";
 
 const Navbar = () => {
   const router = useRouter();
 
   const [isLoginStatus, setIsloginStatus] = useState(null);
+
+  const [openNotifications, setOpenNotifications] = useState(false);
+
+  const handleNotificationsOperation = async () => {
+    setOpenNotifications(!openNotifications);
+  };
 
   const logoutOperation = async (e) => {
     logout();
@@ -132,11 +139,14 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <button className="btn btn-ghost btn-circle">
+        <button
+          className="btn btn-ghost btn-circle"
+          onClick={handleNotificationsOperation}
+        >
           <div className="indicator">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
+              className="h-5 w-5 text-appColor_2"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -151,6 +161,14 @@ const Navbar = () => {
             <span className="badge badge-xs badge-primary indicator-item"></span>
           </div>
         </button>
+        {openNotifications === true && (
+          <div className="notifications">
+            <div className="messages">
+              <FaFaceSadTear className="sad-emoji" />
+              <span className="no-message">There are no messages yet</span>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
