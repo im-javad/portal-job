@@ -45,7 +45,7 @@ class AdController extends Controller
         }
 
         if(isset($request->page) && $request->page != null){
-            $adsQuery->paginate(15 , ['*'] , 'page' , $request->page);
+            $adsQuery->paginate(20 , ['*'] , 'page' , $request->page);
         }
         
         $ads = $adsQuery->get();
