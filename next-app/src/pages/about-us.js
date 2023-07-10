@@ -22,20 +22,20 @@ const AboutUs = () => {
             <div className="imgs w-full md:w-6/12 flex flex-col mb-8">
               <div className="img-group flex">
                 <div className="w-6/12">
-                  <img className="image-full" src="about-us-7-eddit.jpg" />
+                  <img className="image-full" src="about-us-1.jpg" />
                 </div>
                 <div className="w-6/12 grid grid-rows-6">
                   <div className="row-start-7">
-                    <img className="image-full" src="about-us-3.jpg" />
+                    <img className="image-full" src="about-us-2.jpg" />
                   </div>
                 </div>
               </div>
               <div className="img-group flex">
                 <div className="w-6/12">
-                  <img className="image-full" src="about-us-4.jpg" />
+                  <img className="image-full" src="about-us-3.jpg" />
                 </div>
                 <div className="w-6/12">
-                  <img src="abount-us-2.png" />
+                  <img src="about-us-4.png" />
                 </div>
               </div>
             </div>
