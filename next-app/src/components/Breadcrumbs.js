@@ -9,7 +9,7 @@ const Breadcrumbs = ({ crumbs }) => {
     </li>
   ));
   return (
-    <div className="text-sm breadcrumbs flex justify-center mb-10">
+    <div className="text-sm breadcrumbs flex justify-center mb-7">
       <ul>{preparedCrumbs}</ul>
     </div>
   );

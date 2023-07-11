@@ -35,7 +35,7 @@ const Navbar = () => {
   });
 
   return (
-    <div className="navbar bg-appColor_1 mb-14 -z-50">
+    <div className="navbar bg-appColor_1 mb-7 -z-50">
       <div className="navbar-start">
         <div className="dropdown">
           <label
@@ -59,7 +59,7 @@ const Navbar = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 p-2 shadow rounded-box w-52 bg-[#1d232a] text-appColor_3"
+            className="menu menu-sm dropdown-content mt-3 p-2 shadow rounded-box w-52 bg-[#1d232a] text-appColor_3 z-50"
           >
             <li className="">
               <Link href="/">Home</Link>
@@ -162,7 +162,7 @@ const Navbar = () => {
           </div>
         </button>
         {openNotifications === true && (
-          <div className="notifications">
+          <div className="notifications z-50">
             <div className="messages">
               <FaFaceSadTear className="sad-emoji" />
               <span className="no-message">There are no messages yet</span>

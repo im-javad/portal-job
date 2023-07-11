@@ -1,4 +1,5 @@
 import Breadcrumbs from "@/components/Breadcrumbs";
+import HeroHeader from "@/components/HomeSlices/HeroHeader";
 import AdsContent from "@/components/HomeSlices/adsContent";
 import FilteringContent from "@/components/HomeSlices/filteringContent";
 import WhyUs from "@/components/HomeSlices/whyUs";
@@ -6,7 +7,7 @@ import { fetchingJobs } from "@/hooks/job";
 import MainLayout from "@/layouts/MainLayout";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const breadcrumbs = { 0: { title: "Home", link: `/` } };
 
@@ -35,6 +36,8 @@ const Home = ({ jobsReceived }) => {
       </Head>
 
       <Breadcrumbs crumbs={breadcrumbs} />
+
+      <HeroHeader />
 
       <FilteringContent
         setCooperationType={setCooperationType}
