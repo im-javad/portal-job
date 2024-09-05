@@ -110,6 +110,40 @@ section#why-us {
       color: $appColor_4;
       margin-bottom: 8px;
     }
+    .left-part {
+      overflow: hidden;
+      .img {
+        opacity: 0;
+        transform: translateX(-100%);
+        transition: all 0.75s ease-out;
+      }
+      .content {
+        opacity: 0;
+        transform: translateX(100%);
+        transition: all 0.75s ease-out;
+      }
+      .show {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    .right-part {
+      overflow: hidden;
+      .img {
+        opacity: 0;
+        transform: translateX(100%);
+        transition: all 0.75s ease-out;
+      }
+      .content {
+        opacity: 0;
+        transform: translateX(-100%);
+        transition: all 0.75s ease-out;
+      }
+      .show {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
     .guidance {
       cursor: pointer;
       font-weight: 550;

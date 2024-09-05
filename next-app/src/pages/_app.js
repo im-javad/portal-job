@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import Loader from "@/components/Loader";
 import "@/assets/globals.css";
 import "@/assets/scss/run.scss";
+import "@/assets/js/main";
 
 const MyApp = ({ Component, pageProps }) => {
   const router = useRouter();
