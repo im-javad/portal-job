@@ -35,7 +35,7 @@ const AboutUs = () => {
                   <img className="image-full" src="about-us-3.jpg" />
                 </div>
                 <div className="w-6/12">
-                  <img src="about-us-4.png" />
+                  <img src="about-us-4.jpg" />
                 </div>
               </div>
             </div>

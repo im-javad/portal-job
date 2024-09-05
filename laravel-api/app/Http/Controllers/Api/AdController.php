@@ -81,7 +81,7 @@ class AdController extends Controller
         # We could have used the NewAdRequest request as well, but we made a separate request for future data steam
         $validator = $request->validated();
 
-        $this->doUpdate(auth()->user() , $ad , $validator);
+        $this->doUpdate($ad , $validator);
 
         return $this->withContent(new AdResource($ad) , 200);
     }

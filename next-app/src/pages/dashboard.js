@@ -16,6 +16,7 @@ const breadcrumbs = {
   0: { title: "Home", link: `/` },
   1: { title: "Dashboard", link: "/dashboard" },
 };
+
 const Dashboard = ({ adsReceived, requestsReceived, savedReceived }) => {
   // tip: 1 => ads , 2 => requests , 3 => saved
   const [choosen, setChoosen] = useState(1);
