@@ -35,7 +35,7 @@ const Navbar = () => {
   });
 
   return (
-    <div className="navbar bg-appColor_1 mb-7 -z-50">
+    <div className="navbar fixed bg-appColor_1 top-0 z-50">
       <div className="navbar-start">
         <div className="dropdown">
           <label
