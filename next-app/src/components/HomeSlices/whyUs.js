@@ -4,7 +4,7 @@ import { IoArrowRedoCircleOutline } from "react-icons/io5";
 
 const WhyUs = () => {
   return (
-    <section id="why-us" className="mt-24 mb-32">
+    <section id="why-us" className="mt-[58.5rem] md:mt-[29rem] mb-32">
       <div className="flex-col flex items-center mb-7 px-4">
         <h2 className="text-appColor_2 text-3xl font-bold">Why Us?</h2>
         <h3 className="text-xl font-bold text-appColor_4 text-center">

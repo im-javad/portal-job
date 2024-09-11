@@ -98,6 +98,58 @@ section#jobs {
   }
 }
 
+section#work-our {
+  .counters-slice {
+    position: absolute;
+    width: 100%;
+    .background {
+      background-attachment: fixed;
+      background-image: url("/details-of-work-done-bg.jpg");
+      width: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      transition: all 0.75s ease-in-out;
+      filter: brightness(0.2);
+    }
+    .items {
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      right: 50%;
+      transform: translate(50%, -50%);
+      .item {
+        color: $appColor_2;
+        display: flex;
+        flex-direction: column;
+        justify-self: center;
+        margin-right: 30px;
+        .icon {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+        }
+        .counter-group {
+          margin-top: 10px;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          .counter {
+            width: 60px;
+            height: 60px;
+            background: $appColor_3;
+            border-radius: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: $appColor_1;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+}
+
 section#why-us {
   .container {
     h3 {

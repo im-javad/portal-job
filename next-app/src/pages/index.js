@@ -3,6 +3,7 @@ import HeroHeader from "@/components/HomeSlices/HeroHeader";
 import AdsContent from "@/components/HomeSlices/adsContent";
 import FilteringContent from "@/components/HomeSlices/filteringContent";
 import WhyUs from "@/components/HomeSlices/whyUs";
+import WorkOur from "@/components/HomeSlices/workOur";
 import { fetchingJobs } from "@/hooks/job";
 import MainLayout from "@/layouts/MainLayout";
 import Head from "next/head";
@@ -47,6 +48,8 @@ const Home = ({ jobsReceived }) => {
       />
 
       <AdsContent jobs={jobsReceived} countJobs={jobsReceived.length} />
+
+      <WorkOur />
 
       <WhyUs />
     </>

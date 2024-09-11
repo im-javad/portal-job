@@ -1,7 +1,8 @@
 if (typeof window !== "undefined") {
   document.addEventListener("DOMContentLoaded", () => {
-    const whyUsSectionsAnimated = document.querySelectorAll(
-      ".left-part .img , .left-part .content , .right-part .img , .right-part .content"
+
+    const whyUsXAnimateElements = document.querySelectorAll(
+      "#why-us .left-part .img , #why-us .left-part .content , #why-us .right-part .img , #why-us .right-part .content"
     );
 
     const observer = new IntersectionObserver((entries) => {
@@ -14,8 +15,6 @@ if (typeof window !== "undefined") {
       });
     });
 
-    whyUsSectionsAnimated.forEach((element) => {
-      observer.observe(element);
-    });
+    whyUsXAnimateElements.forEach((element) => observer.observe(element));
   });
 }
