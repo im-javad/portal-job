@@ -2,6 +2,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import HeroHeader from "@/components/HomeSlices/HeroHeader";
 import AdsContent from "@/components/HomeSlices/adsContent";
 import FilteringContent from "@/components/HomeSlices/filteringContent";
+import PeoplesOpinions from "@/components/HomeSlices/peoplesOpinions";
 import WhyUs from "@/components/HomeSlices/whyUs";
 import WorkOur from "@/components/HomeSlices/workOur";
 import { fetchingJobs } from "@/hooks/job";
@@ -52,6 +53,8 @@ const Home = ({ jobsReceived }) => {
       <WorkOur />
 
       <WhyUs />
+
+      <PeoplesOpinions />
     </>
   );
 };
